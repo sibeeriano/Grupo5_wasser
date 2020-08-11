@@ -1,0 +1,1811 @@
+/* Theme Description
+-------------------------------------------------
+
+	  Theme Name:
+	  Author:
+	  Support:
+	  Description:
+	  Version:
+	  
+------------------------------------------------- 
+*/
+/* CSS Index
+-------------------------------------------------
+
+	1. Theme default css
+	2. header
+	3. slider
+	4. about-area
+	5. features-box
+	6. department
+	7. team
+	8. video-area
+	9. counter
+	10. footer
+
+-------------------------------------------------
+*/
+/*--------------- ---- Responsive --------------------------*/
+/*-------------   Color Variable  --------------*/
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800;900&display=swap");
+/* line 33, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_color.scss */
+.white-bg {
+  background: #ffffff;
+}
+
+/* line 36, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_color.scss */
+.gray-bg {
+  background: #F5F9FB;
+}
+
+/*-------------Color include--------------*/
+/*-- Background color---*/
+/* line 60, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_color.scss */
+.gray-bg {
+  background: #f7f7fd;
+}
+
+/* line 63, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_color.scss */
+.white-bg {
+  background: #ffffff;
+}
+
+/* line 66, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_color.scss */
+.black-bg {
+  background: #16161a;
+}
+
+/* line 69, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_color.scss */
+.theme-bg {
+  background: #FF3514;
+}
+
+/* line 72, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_color.scss */
+.brand-bg {
+  background: #f1f4fa;
+}
+
+/* line 75, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_color.scss */
+.testimonial-bg {
+  background: #f9fafc;
+}
+
+/*--- color------*/
+/* line 81, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_color.scss */
+.white-color {
+  color: #ffffff;
+}
+
+/* line 84, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_color.scss */
+.black-color {
+  color: #16161a;
+}
+
+/* line 87, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_color.scss */
+.theme-color {
+  color: #FF3514;
+}
+
+/* line 50, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_variables.scss */
+.boxed-btn {
+  background: #fff;
+  color: #FF3514 !important;
+  display: inline-block;
+  padding: 18px 44px;
+  font-family: "Muli", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  border: 0;
+  border: 1px solid #FF3514;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #FF3514;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* line 67, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_variables.scss */
+.boxed-btn:hover {
+  background: #FF3514;
+  color: #fff !important;
+  border: 1px solid #FF3514;
+}
+
+/* line 72, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_variables.scss */
+.boxed-btn:focus {
+  outline: none;
+}
+
+/* line 75, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_variables.scss */
+.boxed-btn.large-width {
+  width: 220px;
+}
+
+/*--
+    - Overlay
+------------------------------------------*/
+/* line 4, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_overlay.scss */
+[data-overlay] {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* line 9, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_overlay.scss */
+[data-overlay]::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+}
+
+/*-- Overlay Opacity --*/
+/* line 22, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_overlay.scss */
+[data-opacity="1"]::before {
+  opacity: 0.1;
+}
+
+/* line 27, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_overlay.scss */
+[data-opacity="2"]::before {
+  opacity: 0.2;
+}
+
+/* line 32, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_overlay.scss */
+[data-opacity="3"]::before {
+  opacity: 0.3;
+}
+
+/* line 37, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_overlay.scss */
+[data-opacity="4"]::before {
+  opacity: 0.4;
+}
+
+/* line 42, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_overlay.scss */
+[data-opacity="5"]::before {
+  opacity: 0.5;
+}
+
+/* line 47, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_overlay.scss */
+[data-opacity="6"]::before {
+  opacity: 0.6;
+}
+
+/* line 52, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_overlay.scss */
+[data-opacity="7"]::before {
+  opacity: 0.7;
+}
+
+/* line 57, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_overlay.scss */
+[data-opacity="8"]::before {
+  opacity: 0.8;
+}
+
+/* line 62, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_overlay.scss */
+[data-opacity="9"]::before {
+  opacity: 0.9;
+}
+
+/* 1. Theme default css */
+/* line 4, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+body {
+  font-family: "Muli", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+  
+}
+
+/* line 10, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Muli", sans-serif;
+  color: #072366;
+  margin-top: 0px;
+  font-style: normal;
+  font-weight: 500;
+  text-transform: normal;
+}
+
+/* line 24, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+p {
+  font-family: "Muli", sans-serif;
+  color: #406d96;
+ font-size: 14px;
+  line-height: 30px;
+  margin-bottom: 15px;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* line 35, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.bg-img-1 {
+  background-image: url(../img/slider/slider-img-1.jpg);
+}
+
+/* line 38, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.bg-img-2 {
+  background-image: url(../img/background-img/bg-img-2.jpg);
+}
+
+/* line 41, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.cta-bg-1 {
+  background-image: url(../img/background-img/bg-img-3.jpg);
+}
+
+/* line 46, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.img {
+  max-width: 100%;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* line 50, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.f-left {
+  float: left;
+}
+
+/* line 53, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.f-right {
+  float: right;
+}
+
+/* line 56, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.fix {
+  overflow: hidden;
+}
+
+/* line 59, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.clear {
+  clear: both;
+}
+
+/* line 63, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+a,
+.button {
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* line 67, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+a:focus,
+.button:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+/* line 72, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+a {
+  color: #635c5c;
+}
+
+/* line 75, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+a:hover {
+  color: #fff;
+}
+
+/* line 78, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+a:focus,
+a:hover,
+.portfolio-cat a:hover,
+.footer -menu li a:hover {
+  text-decoration: none;
+}
+
+/* line 84, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+a,
+button {
+  color: #000000;
+  outline: medium none;
+}
+
+/* line 89, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+button:focus, input:focus, input:focus, textarea, textarea:focus {
+  outline: 0;
+}
+
+/* line 90, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* line 94, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+input:focus::-moz-placeholder {
+  opacity: 0;
+  -webkit-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s;
+}
+
+/* line 101, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* line 105, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: inherit;
+}
+
+/* line 114, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 118, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+li {
+  list-style: none;
+}
+
+/* line 122, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+hr {
+  border-bottom: 1px solid #eceff8;
+  border-top: 0 none;
+  margin: 30px 0;
+  padding: 0;
+}
+
+/* Theme-overlay */
+/* line 130, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.theme-overlay {
+  position: relative;
+}
+
+/* line 133, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.theme-overlay::before {
+  background: #1696e7 none repeat scroll 0 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* line 143, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.overlay2 {
+  position: relative;
+  z-index: 0;
+}
+
+/* line 147, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.overlay2::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* line 157, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.overlay2 {
+  position: relative;
+  z-index: 0;
+}
+
+/* line 161, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.overlay2::before {
+  position: absolute;
+  content: "";
+  background-color: #2E2200;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* line 174, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.section-padding {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+/* line 178, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.separator {
+  border-top: 1px solid #f2f2f2;
+}
+
+/* line 182, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.mb-90 {
+  margin-bottom: 90px;
+}
+
+@media (max-width: 767px) {
+  /* line 182, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+  .mb-90 {
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 182, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+  .mb-90 {
+    margin-bottom: 45px;
+  }
+}
+
+/* owl-carousel button style */
+/* line 194, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.owl-carousel .owl-nav div {
+  background: rgba(255, 255, 255, 0.8) none repeat scroll 0 0;
+  height: 40px;
+  left: 20px;
+  line-height: 40px;
+  font-size: 22px;
+  color: #646464;
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease 0s;
+  width: 40px;
+}
+
+/* line 213, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.owl-carousel .owl-nav div.owl-next {
+  left: auto;
+  right: -30px;
+}
+
+/* line 216, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.owl-carousel .owl-nav div.owl-next i {
+  position: relative;
+  right: 0;
+  top: 1px;
+}
+
+/* line 223, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.owl-carousel .owl-nav div.owl-prev i {
+  position: relative;
+  right: 1px;
+  top: 0px;
+}
+
+/* line 233, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.owl-carousel:hover .owl-nav div {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* line 236, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.owl-carousel:hover .owl-nav div:hover {
+  color: #fff;
+  background: #ff3500;
+}
+
+/* line 246, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.btn {
+  text-align: center;
+  border: none;
+  padding: 10px 65px 10px 31px;
+  text-transform: capitalize;
+  border-radius: 0px;
+  cursor: zoom-in;
+  color: #406d96;
+  display: inline-block;
+  font-size: 32px;
+  background-size: 200%;
+  transition: 0.6s;
+  background-image: linear-gradient(to left, #D8e8e8, #A8d0da, #406d96);
+  background-position: right;
+}
+
+/* line 260, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.btn i {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  position: relative;
+  left: 26px;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+/* line 269, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.btn:hover i {
+  left: 30px;
+}
+
+/* line 275, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.btn:hover {
+  background-position: left;
+}
+
+/* line 279, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.btn2 {
+  padding: 15px 65px 20px 31px;
+  text-transform: capitalize;
+  border-radius: 0px;
+  cursor: pointer;
+  color: #FF3514;
+  display: inline-block;
+  font-size: 16px;
+  border: 1px solid #FF3514;
+  background: none;
+}
+
+/* line 290, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.btn2 i {
+  color: #FF3514;
+  font-size: 13px;
+  font-weight: 500;
+  position: relative;
+  left: 26px;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+/* line 299, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.btn2:hover i {
+  left: 30px;
+}
+
+/* line 305, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.btn2:hover {
+  color: #FF3514;
+}
+
+/* line 311, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.btn.focus, .btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+/* line 316, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.btn.focus, .btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+/* line 320, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.about-btn {
+  padding: 18px 43px;
+}
+
+/* line 325, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.header-btn {
+  padding: 18px 43px;
+}
+
+/* line 328, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.hero-btn {
+  padding: 17px 65px 17px 31px;
+  
+}
+
+/* line 332, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.white-btn {
+  padding: 30px 39px;
+  background: #fff;
+  color: #072366 !important;
+}
+
+/* line 336, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.white-btn::before {
+  background: #FF3514;
+  color: #fff !important;
+}
+
+/* line 341, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.black-btn {
+  padding: 14px 35px;
+  background: #000;
+  display: inline-block;
+}
+
+/* line 345, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.black-btn::before {
+  background: #D8E8E8;
+}
+
+/* line 349, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.borders-btn {
+  padding: 14px 35px;
+  background: none;
+  border: 1px solid #ff2656;
+  border-radius: 0 10px;
+  display: inline-block;
+  color: #ff2656;
+}
+
+/* line 356, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.borders-btn::before {
+  background: #D8E8E8;
+}
+
+/* line 362, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.cal-btn i {
+  color: #09cc7f !important;
+  font-size: 31px;
+  font-weight: 300;
+  margin-right: 10px;
+}
+
+/* line 368, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.cal-btn > p {
+  color: #D8E8E8 !important;
+  font-weight: 700;
+  font-size: 16px;
+  display: inline-block;
+  margin: 0 !important;
+  position: relative;
+  top: -7px;
+}
+
+/* line 380, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.submit-btn2 {
+  background: #FF3514;
+  width: 100%;
+  height: 60px;
+  padding: 10px 20px;
+  border: 0;
+  color: #fff;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 0px;
+}
+
+/* line 393, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.border-btn {
+  border: 1px solid #ff5600;
+  color: #464d65;
+  background: none;
+  border-radius: 5px;
+  text-transform: capitalize;
+  padding: 19px 47px;
+  -moz-user-select: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  position: relative;
+  transition: color 0.4s linear;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+
+@media (max-width: 575px) {
+  /* line 393, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+  .border-btn {
+    display: none;
+  }
+}
+
+/* line 417, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.border-btn::before {
+  border: 1px solid transparent;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 101%;
+  height: 101%;
+  background: #FF3514;
+  z-index: -1;
+  transition: transform 0.5s;
+  transition-timing-function: ease;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  transform: scaleY(0);
+  border-radius: 0;
+}
+
+/* line 436, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.border-btn:hover::before {
+  transform: scaleY(1);
+  border: 1px solid transparent;
+}
+
+/* line 442, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.section-over1 {
+  position: relative;
+  z-index: 1;
+}
+
+/* line 445, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.section-over1::before {
+  position: absolute;
+  content: "";
+  background-color: rgba(6, 7, 6, 0.6);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-repeat: no-repeat;
+}
+
+/* button style */
+/* line 462, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.breadcrumb > .active {
+  color: #888;
+}
+
+/* scrollUp */
+/* line 466, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+#scrollUp, #back-top {
+  background: #A8d0da;
+  height: 50px;
+  width: 50px;
+  right: 31px;
+  bottom: 18px;
+  position: fixed;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 48px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 10px 3px rgba(108, 98, 98, 0.2);
+}
+
+@media (max-width: 575px) {
+  /* line 466, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+  #scrollUp, #back-top {
+    right: 16px;
+  }
+}
+
+/* line 483, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+#scrollUp a i, #back-top a i {
+  display: block;
+  line-height: 50px;
+}
+
+/* line 490, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+#scrollUp:hover {
+  color: #fff;
+}
+
+/* Sticky*/
+/* line 495, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.sticky-bar {
+  left: 0;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+  box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+  z-index: 9999;
+  -webkit-animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+  animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+  -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+  background: #fff;
+}
+
+
+
+
+
+/*-- Some Animated CSS -- */
+/* bounce-animate */
+/* line 567, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+
+/* 20. preloader */
+/* line 641, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.preloader {
+  background-color: #f7f7f7;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999999;
+  -webkit-transition: .6s;
+  -o-transition: .6s;
+  transition: .6s;
+  margin: 0 auto;
+}
+
+/* line 657, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.preloader .preloader-circle {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-style: solid;
+  border-width: 1px;
+  border-top-color:#A8d0da ;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  z-index: 10;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 1px 5px 0 rgba(35, 181, 185, 0.15);
+  box-shadow: 0 1px 5px 0 rgba(35, 181, 185, 0.15);
+  background-color: #fff;
+  -webkit-animation: zoom 2000ms infinite ease;
+  animation: zoom 2000ms infinite ease;
+  -webkit-transition: .6s;
+  -o-transition: .6s;
+  transition: .6s;
+}
+
+/* line 679, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.preloader .preloader-circle2 {
+  border-top-color: #0078ff;
+}
+
+/* line 682, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.preloader .preloader-img {
+  position: absolute;
+  top: 50%;
+  z-index: 200;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  display: inline-block;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding-top: 6px;
+  -webkit-transition: .6s;
+  -o-transition: .6s;
+  transition: .6s;
+}
+
+/* line 700, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.preloader .preloader-img img {
+  max-width: 55px;
+}
+
+
+
+@-webkit-keyframes zoom {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .6s;
+    -o-transition: .6s;
+    transition: .6s;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: .6s;
+    -o-transition: .6s;
+    transition: .6s;
+  }
+}
+
+@keyframes zoom {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .6s;
+    -o-transition: .6s;
+    transition: .6s;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: .6s;
+    -o-transition: .6s;
+    transition: .6s;
+  }
+}
+
+/* line 743, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.slick-initialized .slick-slide {
+  outline: 0;
+}
+
+/*-- Section Padding -- */
+/* line 749, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.section-padding2 {
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 3, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+  .header-area .header-bottom {
+    padding: 17px 0px;
+    background-color: #D8e8e8;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 3, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+  .header-area .header-bottom {
+    padding: 17px 0px;
+  }
+}
+
+@media (max-width: 575px) {
+  /* line 3, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+  .header-area .header-bottom {
+    padding: 17px 0px;
+    
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 19, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+  .header-area {
+    box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 19, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+  .header-area {
+    box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+  }
+}
+
+@media (max-width: 575px) {
+  /* line 19, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+  .header-area {
+    box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+  }
+}
+
+/* line 30, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.header-area .header-top {
+  background: #140C40;
+  padding: 0px 0px;
+}
+
+/* line 36, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.header-area .header-top .header-info-left ul li {
+  color: #fff;
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 15px;
+  font-weight: 100;
+  font-family: "Muli", sans-serif;
+  text-transform: normal;
+}
+
+/* line 44, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.header-area .header-top .header-info-left ul li:last-child {
+  margin-right: 0px;
+}
+
+/* line 47, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.header-area .header-top .header-info-left ul li i {
+  margin-right: 8px;
+}
+
+/* line 59, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.main-header {
+  position: relative;
+  z-index: 3;
+  background-color: #D8e8e8;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+  /* line 62, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+  .main-header .main-menu {
+    margin-right: 30px;
+  }
+}
+
+/* line 67, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.main-header .main-menu ul li {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  margin: 0 22px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* line 67, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+  .main-header .main-menu ul li {
+    margin: 0 13px;
+  }
+}
+
+/* line 75, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.main-header .main-menu ul li a {
+  color: #406d96;
+  font-weight: 600;
+  padding: 33px 2px;
+  display: block;
+  font-size: 16px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  text-transform: capitalize;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* line 75, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+  .main-header .main-menu ul li a {
+    padding: 39px 0px;
+  }
+}
+
+/* line 89, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.main-header .main-menu ul li:hover > a {
+  color: #A8D0DA;
+}
+
+/* line 94, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.main-header .main-menu ul li:last-child a {
+  padding-right: 0;
+}
+
+/* line 99, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.main-header .main-menu ul li.active {
+  position: relative;
+}
+
+/* line 101, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.main-header .main-menu ul li.active::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #D8E8E8;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+/* line 114, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.main-header .main-menu ul ul.submenu {
+  position: absolute;
+  width: 170px;
+  background: #D8E8E8;
+  left: 0;
+  top: 90%;
+  visibility: hidden;
+  opacity: 0;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
+  padding: 17px 0;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* line 126, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.main-header .main-menu ul ul.submenu > li {
+  margin-left: 7px;
+  display: block;
+}
+
+/* line 129, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.main-header .main-menu ul ul.submenu > li > a {
+  padding: 6px 10px !important;
+  font-size: 15px;
+  color: #406D96;
+}
+
+/* line 133, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.main-header .main-menu ul ul.submenu > li > a:hover {
+  background: none;
+  padding-left: 13px !important;
+}
+
+/* line 147, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.main-header .search span {
+  color:#406D96;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 31px 19px;
+  float: right;
+}
+
+/* line 157, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.main-header ul > li:hover > ul.submenu {
+  visibility: visible;
+  opacity: 1;
+  top: 100%;
+}
+
+/* line 163, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.header-transparent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;
+}
+
+/* line 177, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.header-area .header-top .header-info-right .header-social a i {
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+}
+
+/* line 186, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.header-area .header-top .header-info-right .header-social a:hover i {
+  color: #D8E8E8;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+
+/* line 204, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.header-area .header-sticky.sticky-bar {
+  background: #D8e8e8
+}
+
+/* line 209, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.header-area .header-sticky.sticky-bar .main-menu nav > ul > li > a {
+  padding: 33px 2px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 204, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+  .header-area .header-sticky.sticky-bar {
+    padding: 15px 0px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 204, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+  .header-area .header-sticky.sticky-bar {
+    padding: 15px 0px;
+  }
+}
+
+@media (max-width: 575px) {
+  /* line 204, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+  .header-area .header-sticky.sticky-bar {
+    padding: 15px 0px;
+  }
+}
+
+/* line 232, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.mobile_menu {
+  position: absolute;
+  right: 0px;
+  width: 100%;
+  z-index: 99;
+}
+
+/* line 237, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.mobile_menu .slicknav_menu {
+  background: transparent;
+  margin-top: 0px !important;
+}
+
+/* line 240, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.mobile_menu .slicknav_menu .slicknav_btn {
+  top: -32px;
+}
+
+/* line 243, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.mobile_menu .slicknav_menu .slicknav_btn .slicknav_icon-bar {
+  background-color:#A8d0da !important;
+}
+
+/* line 247, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.mobile_menu .slicknav_menu .slicknav_nav {
+  margin-top: 9px !important;
+}
+
+/* line 250, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.mobile_menu .slicknav_menu .slicknav_nav a:hover {
+  background: transparent;
+  color: #a8D0DA;
+}
+
+/* line 254, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.mobile_menu .slicknav_menu .slicknav_nav a {
+  font-size: 15px;
+  padding: 7px 10px;
+}
+
+/* line 259, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.mobile_menu .slicknav_menu .slicknav_nav .slicknav_item a {
+  padding: 0 !important;
+}
+
+/* line 269, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.search-model-box {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgb(247, 243, 243);
+  z-index: 99999;
+}
+
+/* line 278, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.search-model-box .search-model-form {
+  padding: 0 15px;
+}
+
+/* line 280, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.search-model-box .search-model-form input {
+  width: 500px;
+  font-size: 20px;
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid #d8e8d8;
+  background: none;
+  color: #999;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 280, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+  .search-model-box .search-model-form input {
+    width: 251px;
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 575px) {
+  /* line 280, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+  .search-model-box .search-model-form input {
+    width: 251px;
+    font-size: 26px;
+  }
+}
+
+/* line 297, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
+.search-model-box .search-close-btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #A8d0da;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 28px;
+  line-height: 28px;
+  top: 30px;
+  cursor: pointer;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/* line 1, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.slider-height {
+  height: 765px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* line 1, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-height {
+    height: 765px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 1, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-height {
+    height: 500px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 1, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-height {
+    height: 500px;
+  }
+}
+
+@media (max-width: 575px) {
+  /* line 1, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-height {
+    height: 500px;
+  }
+}
+
+/* line 18, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.slider-height2 {
+  height: 400px;
+  background-size: cover;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 18, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-height2 {
+    height: 350px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 18, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-height2 {
+    height: 260px;
+  }
+}
+
+@media (max-width: 575px) {
+  /* line 18, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-height2 {
+    height: 260px;
+  }
+}
+
+/* line 37, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.slider-area {
+  margin-top: -1px;
+  background-image: url(../img/hero/h1_hero.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* line 44, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.slider-area .hero__caption {
+  overflow: hidden;
+}
+
+/* line 58, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.slider-area .hero__caption span {
+  font-family: "Muli", sans-serif;
+  font-weight: 800;
+  display: block;
+  color: #a8d0da;
+  text-shadow: 2px 3px #2f3a56 ;
+}
+
+/* line 63, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.slider-area .hero__caption h1 {
+  font-size: 70px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 29px;
+  text-transform: capitalize;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* line 63, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-area .hero__caption h1 {
+    font-size: 70px;
+    line-height: 1.2;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 63, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-area .hero__caption h1 {
+    font-size: 50px;
+    line-height: 1.2;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 63, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-area .hero__caption h1 {
+    font-size: 35px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 575px) {
+  /* line 63, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-area .hero__caption h1 {
+    font-size: 29px;
+    line-height: 1.5;
+  }
+}
+
+/* line 88, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.slider-area .hero__caption p {
+  font-size: 27px;
+  color: #a8d0da;
+  text-shadow: 1px 2px #2f3a56;
+  font-family: "Muli", sans-serif;
+  margin-bottom: 50px;
+  
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 88, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-area .hero__caption p {
+    padding-right: 13px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 88, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-area .hero__caption p {
+    padding-right: 0px;
+  }
+}
+
+@media (max-width: 575px) {
+  /* line 88, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-area .hero__caption p {
+    padding-right: 0px;
+    font-size: 15px;
+  }
+}
+
+/* line 106, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.slider-area .video-icon {
+  position: absolute;
+  right: 160px;
+  top: 50%;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* line 106, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-area .video-icon {
+    right: 48px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 106, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-area .video-icon {
+    right: 63px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 106, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-area .video-icon {
+    right: 82px;
+  }
+}
+
+@media (max-width: 575px) {
+  /* line 106, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-area .video-icon {
+    right: 27px;
+    bottom: 27px !important;
+    top: unset;
+  }
+}
+
+/* line 124, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.slider-area .video-icon a {
+  background: #fff;
+  color: #ff1313;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  text-align: center;
+  line-height: 60px;
+  border-radius: 50%;
+}
+
+/* line 133, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.slider-area .video-icon a::after {
+  position: absolute;
+  border: 51px solid rgba(255, 255, 255, 0.2);
+  content: "";
+  border-radius: 50%;
+  left: -20px;
+  top: -21px;
+  right: 0;
+  z-index: 0;
+  background: #0000;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 124, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-area .video-icon a {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+@media (max-width: 575px) {
+  /* line 124, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-area .video-icon a {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+/* line 154, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.slider-area .video-icon a i {
+  font-size: 20px;
+  font-size: 20px;
+  line-height: 1;
+  position: relative;
+  right: -2px;
+  top: 2px;
+}
+
+/* line 164, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.slider-area .video-icon a.btn-icon {
+  position: relative;
+  /* Animations */
+  /* End Animated */
+}
+
+/* line 166, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.slider-area .video-icon a.btn-icon::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  bottom: -2px;
+  right: -2px;
+  border-radius: inherit;
+  border: 1px solid #fff;
+  -webkit-animation: btnIconRipple 2s cubic-bezier(0.23, 1, 0.32, 1) both infinite;
+  animation: btnIconRipple 2s cubic-bezier(0.23, 1, 0.32, 1) both infinite;
+}
+
+@-webkit-keyframes btnIconRipple {
+  0% {
+    border-width: 4px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    border-width: 1px;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  80% {
+    border-width: 1px;
+    -webkit-transform: scale(1.9);
+    transform: scale(1.9);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* line 198, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.slider-area .video-icon a.btn-icon:hover {
+  background: #440066;;
+  color: #fff;
+}
+
+/* line 208, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.hero-overly {
+  position: relative;
+  z-index: 1;
+}
+
+/* line 211, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.hero-overly::before {
+  position: absolute;
+  content: "";
+  background-color: rgba(1, 10, 28, 0.3);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-repeat: no-repeat;
+}
+
+/* line 227, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.header-transparent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;
+}
+
+/* line 238, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+.slider-area2 .hero-cap h2 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 1;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 238, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-area2 .hero-cap h2 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 575px) {
+  /* line 238, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
+  .slider-area2 .hero-cap h2 {
+    font-size: 27px;
+  }
+
+}
+
+/* line 3, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
+.gallery-area .single-gallery {
+  position: relative;
+}
+
+/* line 5, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
+.gallery-area .single-gallery::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  content: "";
+  background-color: rgba(1, 10, 28, 0.4);
+  opacity: 0;
+  z-index: 1;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+/* line 19, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
+.gallery-area .single-gallery:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* line 25, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
+.gallery-area .single-gallery .gallery-img {
+  position: relative;
+  height: 565px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 575px) {
+  /* line 25, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
+  .gallery-area .single-gallery .gallery-img {
+    height: 420px;
+  }
+}
+
+/* line 35, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
+.gallery-area .single-gallery .thumb-content-box {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: translateY(-50%);
+  height: 100%;
+  width: 100%;
+  transition: .4s;
+  z-index: 2;
+}
+
+/* line 46, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
+.gallery-area .single-gallery .thumb-content-box .thumb-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* line 50, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
+.gallery-area .single-gallery .thumb-content-box .thumb-content h3 {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 22px;
+  margin-bottom: 26px;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+  /* line 50, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
+  .gallery-area .single-gallery .thumb-content-box .thumb-content h3 {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* line 50, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
+  .gallery-area .single-gallery .thumb-content-box .thumb-content h3 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 575px) {
+  /* line 50, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
+  .gallery-area .single-gallery .thumb-content-box .thumb-content h3 {
+    font-size: 32px;
+  }
+}
+
+/* line 66, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
+.gallery-area .single-gallery .thumb-content-box .thumb-content p {
+  font-size: 16px;
+  color: #ffff;
+  padding: 0 82px;
+  line-height: 1.6;
+}
+
+@media (max-width: 575px) {
+  /* line 66, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
+  .gallery-area .single-gallery .thumb-content-box .thumb-content p {
+    padding: 0 18px;
+  }
+}
+
+/* line 75, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
+.gallery-area .single-gallery .thumb-content-box .thumb-content a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+/* line 80, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
+.gallery-area .single-gallery .thumb-content-box .thumb-content a:hover {
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+
+
+/* line 1, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_extend.scss */
+.flex-center-start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+}
+
+
+/*# sourceMappingURL=style.css.map */
