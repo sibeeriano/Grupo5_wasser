@@ -1587,7 +1587,7 @@ hr {
   animation: btnIconRipple 2s cubic-bezier(0.23, 1, 0.32, 1) both infinite;
 }
 
-@-webkit-keyframes btnIconRipple {
+/*@-webkit-keyframes btnIconRipple {
   0% {
     border-width: 4px;
     -webkit-transform: scale(1);
@@ -1606,7 +1606,8 @@ hr {
   100% {
     opacity: 0;
   }
-}
+} */
+
 
 /* line 198, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_h1-hero.scss */
 .slider-area .video-icon a.btn-icon:hover {
@@ -1809,3 +1810,4 @@ hr {
 
 
 /*# sourceMappingURL=style.css.map */
+

@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET carrito pipi listing. */
 router.get('/', function(req, res, next) {
-    res.render("index");
+    res.render("carrito");
 });
 
 module.exports = router;
