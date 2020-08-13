@@ -11,6 +11,7 @@ var registro = require("./routes/registro");
 var recuperar = require ("./routes/recuperar");
 var carrito = require ("./routes/carrito");
 var categoria = require ("./routes/categoria")
+var producto = require ("./routes/producto")
 
 
 
@@ -34,6 +35,7 @@ app.use("/registro", registro)
 app.use("/recuperar", recuperar)
 app.use("/carrito", carrito);
 app.use("/categoria", categoria)
+app.use("/producto", producto)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

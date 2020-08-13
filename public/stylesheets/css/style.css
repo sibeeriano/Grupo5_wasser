@@ -213,6 +213,10 @@ h6 {
   text-transform: normal;
 }
 
+h2.card-title {
+  text-align: center;
+}
+
 /* line 24, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
 p {
   font-family: "Muli", sans-serif;
