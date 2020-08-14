@@ -19,6 +19,7 @@ var sanitarios = require ("./routes/sanitarios")
 var banieras = require ("./routes/banieras")
 var accesorios = require ("./routes/accesorios")
 var carga = require ("./routes/carga")
+var sobrenosotros = require ("./routes/sobrenosotros")
 
 
 
@@ -49,6 +50,7 @@ app.use("/sanitarios",sanitarios)
 app.use("/banieras",banieras)
 app.use("/accesorios",accesorios)
 app.use("/carga",carga)
+app.use("/sobrenosotros", sobrenosotros)
 
 
 // catch 404 and forward to error handler
