@@ -12,7 +12,12 @@ var recuperar = require ("./routes/recuperar");
 var carrito = require ("./routes/carrito");
 var categoria = require ("./routes/categoria")
 var producto = require ("./routes/producto")
-
+var catebanio = require ("./routes/catebanio")
+var catecocina = require ("./routes/catecocina")
+var bachas = require ("./routes/bachas")
+var sanitarios = require ("./routes/sanitarios")
+var banieras = require ("./routes/banieras")
+var accesorios = require ("./routes/accesorios")
 
 
 
@@ -36,6 +41,13 @@ app.use("/recuperar", recuperar)
 app.use("/carrito", carrito);
 app.use("/categoria", categoria)
 app.use("/producto", producto)
+app.use("/catebanio", catebanio)
+app.use("/catecocina",catecocina)
+app.use("/bachas",bachas)
+app.use("/sanitarios",sanitarios)
+app.use("/banieras",banieras)
+app.use("/accesorios",accesorios)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

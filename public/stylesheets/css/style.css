@@ -281,6 +281,14 @@ a,
   transition: 0.3s;
 }
 
+.container2{
+  display:flex;
+
+}
+
+.row2{
+  
+}
 /* line 67, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
 a:focus,
 .button:focus {
