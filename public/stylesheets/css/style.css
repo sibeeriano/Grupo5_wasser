@@ -33,6 +33,7 @@
   background: #ffffff;
 }
 
+
 /* line 36, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_color.scss */
 .gray-bg {
   background: #F5F9FB;
@@ -103,6 +104,8 @@
   text-transform: uppercase;
   cursor: pointer;
 }
+
+
 
 /* line 67, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_variables.scss */
 .boxed-btn:hover {
@@ -289,6 +292,8 @@ a,
 .row2{
   
 }
+
+
 /* line 67, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
 a:focus,
 .button:focus {
@@ -306,13 +311,64 @@ a:hover {
   color: #fff;
 }
 
-/* line 78, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
-a:focus,
-a:hover,
-.portfolio-cat a:hover,
-.footer -menu li a:hover {
-  text-decoration: none;
+.footer_trust_top {
+  width: 100%;
+  margin: 20px auto;
+  text-align: center;
 }
+
+.footer_trust_top p {
+  font-family: montserrat;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(0, 0, 0, 0.5);
+}
+
+  .footer-left {
+    padding-left: 0px;
+    justify-content: flex-start;
+  }
+  .footer-right {
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .footer_main {
+    margin: 30px 0px 0px 0px;
+   ;
+  }
+.footer_copyright p {
+  font-size: 12px;
+  color: rgb(0,0,0,0.5);
+padding-top: 20px;
+}
+.footer {
+  position: relative;
+  
+}
+.footer2 {
+  position: center;
+  top:-125px;
+  bottom:0;
+  right:0;
+  left: 200px;
+}
+
+.emailsignup {
+  font-family:"Muli", sans-serif;;
+  font-size: 16px;
+  margin-left: 15px;
+  height: 50px;
+  width: 30%;
+  border: none;
+  background-color: #406D96;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 50px;
+  margin-top: 10px;
+}
+
 
 /* line 84, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
 a,
