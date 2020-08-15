@@ -1,8 +1,8 @@
 # Realizar un breve retrospectiva
 
 
-Que hicimos bien: Organizar las cosas con tiempo.
-		  Entrega del sprint 1 en tiempo y forma.
+Que hicimos bien: Organizar las cosas con tiempo y reunirnos cuando nos teniamos que reunir.
+		  Entrega del sprint 2 en tiempo y forma.
 
 Que hicimos mal: No hacer los puntos opcionales.
 

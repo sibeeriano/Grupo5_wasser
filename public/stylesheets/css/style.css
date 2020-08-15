@@ -568,14 +568,30 @@ hr {
 .btn {
   text-align: center;
   border: none;
-  padding: 10px 65px 10px 31px;
+  padding: 10px 65px 10px 20px;
   text-transform: capitalize;
   border-radius: 0px;
-  cursor: zoom-in;
+  cursor: pointer;
   color: #406d96;
   display: inline-block;
   font-size: 32px;
-  background-size: 200%;
+  background-size: 100%;
+  transition: 0.6s;
+  background-image: linear-gradient(to left, #D8e8e8, #A8d0da, #406d96);
+  background-position: right;
+}
+
+.btn2 {
+  text-align: center;
+  border: none;
+  padding: 10px 65px 10px 31px;
+  text-transform: capitalize;
+  border-radius: 0px;
+  cursor: pointer;
+  color: aliceblue;
+  display: inline-block;
+  font-size: 15px;
+  background-size: 100%;
   transition: 0.6s;
   background-image: linear-gradient(to left, #D8e8e8, #A8d0da, #406d96);
   background-position: right;
@@ -605,6 +621,7 @@ hr {
 }
 
 /* line 279, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+/*
 .btn2 {
   padding: 15px 65px 20px 31px;
   text-transform: capitalize;
@@ -615,7 +632,7 @@ hr {
   font-size: 16px;
   border: 1px solid #FF3514;
   background: none;
-}
+}*/
 
 /* line 290, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
 .btn2 i {
@@ -1473,7 +1490,17 @@ hr {
   font-size: 70px;
   font-weight: 700;
   margin-bottom: 14px;
-  color: #fff;
+  color: rgb(235, 39, 39);
+  line-height: 1.2;
+  margin-bottom: 29px;
+  text-transform: capitalize;
+}
+
+.slider-area .hero__caption p2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: rgb(255, 255, 255);
   line-height: 1.2;
   margin-bottom: 29px;
   text-transform: capitalize;
