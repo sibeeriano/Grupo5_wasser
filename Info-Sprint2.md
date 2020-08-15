@@ -6,3 +6,5 @@ En la carpeta CSS hay carpetas de las animaciones de bootstrap, asi como en la c
 
 Las imagenes se encuentran en Public/stylesheets/img y en la carpeta public/images esta el logo y la paleta de colores definida en el sprint numero 1 pero no acompañó al mismo.
 
+Vara, Bucco, Turrion.
+
