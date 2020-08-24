@@ -7,7 +7,7 @@ let controller = require('../controllers/categoriasControllers');
 router.get('/categoria', controller.categoria);
 router.get('/catebanio', controller.catebanio);
 router.get('/catecocina', controller.catecocina);
-router.get('/bañeras', controller.banieras);
+router.get('/banieras', controller.banieras);
 router.get('/bachas', controller.bachas);
 router.get('/accesorios', controller.accesorios);
 router.get('/sanitarios', controller.sanitarios);
