@@ -5,21 +5,26 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require("./routes/index");
-var usersRouter = require('./routes/users');
-var iniciarsesion = require("./routes/iniciarsesion");
-var registro = require("./routes/registro");
-var recuperar = require ("./routes/recuperar");
-var carrito = require ("./routes/carrito");
-var categoria = require ("./routes/categoria")
+
+var sobrenosotrosRouter = require ("./routes/producto")
+
+
+var categoriaRouter = require ("./routes/categorias")
+var catebanioRouter = require ("./routes/categorias")
+var catecocinaRouter = require ("./routes/categorias")
+var bachasRouter = require ("./routes/categorias")
+var sanitariosRouter = require ("./routes/categorias")
+var banierasRouter = require ("./routes/categorias")
+var accesoriosRouter = require ("./routes/categorias")
+
+var registro =require('./routes/users')
+var iniciarsesion = require("./routes/users");
+var recuperar = require ("./routes/users");
+
+var carrito = require ("./routes/producto");
 var producto = require ("./routes/producto")
-var catebanio = require ("./routes/catebanio")
-var catecocina = require ("./routes/catecocina")
-var bachas = require ("./routes/bachas")
-var sanitarios = require ("./routes/sanitarios")
-var banieras = require ("./routes/banieras")
-var accesorios = require ("./routes/accesorios")
-var carga = require ("./routes/carga")
-var sobrenosotros = require ("./routes/sobrenosotros")
+var carga = require ("./routes/producto")
+
 
 
 
@@ -35,22 +40,33 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
+app.use("/sobrenosotros", sobrenosotrosRouter)
+
+
+app.use("/categoria", categoriaRouter);
+app.use("/catebanio", catebanioRouter);
+app.use("/catecocina",catecocinaRouter)
+app.use("/bachas",bachasRouter)
+app.use("/sanitarios",sanitariosRouter)
+app.use("/banieras",banierasRouter)
+app.use("/accesorios",accesoriosRouter)
+
+app.use("/registro", registro);
 app.use("/iniciarsesion", iniciarsesion)
-app.use("/registro", registro)
 app.use("/recuperar", recuperar)
+
 app.use("/carrito", carrito);
-app.use("/categoria", categoria)
 app.use("/producto", producto)
-app.use("/catebanio", catebanio)
-app.use("/catecocina",catecocina)
-app.use("/bachas",bachas)
-app.use("/sanitarios",sanitarios)
-app.use("/banieras",banieras)
-app.use("/accesorios",accesorios)
 app.use("/carga",carga)
-app.use("/sobrenosotros", sobrenosotros)
+
+
+
+
+
+
 
 
 // catch 404 and forward to error handler

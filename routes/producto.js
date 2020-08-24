@@ -1,9 +1,14 @@
 var express = require('express');
-var router = express.Router();
+var router = require('.');
 
-/* GET carrito pipi listing. */
-router.get('/', function(req, res, next) {
-    res.render("producto");
-});
+let controller = require('../controllers/productoControllers');
 
-module.exports = router;
+
+router.get('/producto', controller.producto);
+router.get('/carga', controller.carga);
+router.get('/carrito', controller.carrito);
+router.get('/sobrenosotros', controller.sobrenosotros);
+
+
+
+module.exports=router
