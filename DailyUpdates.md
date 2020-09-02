@@ -10,4 +10,9 @@ Dividimos en 3 partes el sprint de las actividades que vamos a hacer cada uno.
 Domingo 24: 
 facundo termino la primer parte del sprint que consistia en acomodar el express generator, sus rutas y crear la carpeta partials con sus respectivos archivos .js.
 Nos reunimos unos minutos para charlar de lo que sigue.
- 
+
+miercoles 27:lean bucco termino los archivos json, los revisamos y los agregó al repositorio.
+
+viernes 28: tuvimos reunion para hablar de las cosas faltantes del sprint, empezamos con el SCRUM entre los tres.
+
+lunes 31 y martes 1: nos reunimos para seguir con el SCRUM.
