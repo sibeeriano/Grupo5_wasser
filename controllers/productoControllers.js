@@ -117,29 +117,3 @@ module.exports={
 
 
 
-
-         /*
-         let cocina = dbProducto.filter(producto => {
-           return producto.category == "cocina"
-         })
-         let bachas = dbProducto.filter(producto => {
-         return producto.category== "bachas"
-         })
-         let sanitarios = dbProducto.filter(producto => {
-         return producto.category== "sanitarios"
-         })
-        let bañeras = dbProducto.filter(producto => {
-         return producto.category== "bañeras"
-         })
-        let accesorios = dbProducto.filter(producto => {
-         return producto.category== "accesorios"
-         })*/
-
-         
-           /*
-           cocina: cocina,
-           bachas: bachas,
-           sanitarios: sanitarios,
-           bañeras: bañeras,
-           accesorios: accesorios
-*/
