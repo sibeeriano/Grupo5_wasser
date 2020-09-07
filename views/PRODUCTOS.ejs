@@ -13,7 +13,7 @@
 </header> 
 
   <main>
-    <h1>Todos nuestros productos <br>       (despues hago un banner, me quiero ir a dormir)</h1>
+    <h1>Listado de productos <br> Vista administrador </h1>
     <br>
     <div class="container">    
       <div class="row">
@@ -25,10 +25,18 @@
               <div class="panel-footer">$<%- producto.price %> </div>
               <div class="d-flex justify-content-end">
                 
-                  <a href="/productos/<%= producto.category %>/<%= producto.id %>" class="btn2">editar</a>
+           
                  
+                  <form action="/productos/EditarProducto/<%= producto.id %>"  method="">
+                    <button class="">Editar</button>
+                  
+                  
+  
+                  </form>
+<br>
+
                 <form action="/productos/delete/<%= producto.id %>?_method=delete" method="POST">
-                  <button class="btn2">Eliminar</button>
+                  <button class="">Eliminar</button>
                 
                 
 

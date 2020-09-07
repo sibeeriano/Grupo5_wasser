@@ -19,13 +19,18 @@ let upload = multer({storage:storage})
 
 
 router.get('/',controller.listar);
+
 router.get('/agregar', controller.agregar);
 router.post('/agregar',upload.any(), controller.publicar);
+
+router.get('/EditarProducto/:id', controller.vistaEditar)
+router.put('/EditarProducto/:id', upload.any(), controller.guardarEditar)
+
 router.get('/:cat?',controller.categorias);
 router.get('/:cat?/:id?',controller.producto);
 
-router.get('/Editar/:id', controller.vistaEditar)
-router.put('/Editar/:id', upload.any(),controller.guardarEditar)
+
+//router.put('/EditarProducto/:id', upload.any(),controller.guardarEditar)
 router.delete('/delete/:id', controller.delete)
 
 

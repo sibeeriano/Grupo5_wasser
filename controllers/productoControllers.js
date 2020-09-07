@@ -84,7 +84,7 @@ module.exports={
         })
 
     },
-    guardarEditar:function(req,res,next){
+     guardarEditar:function(req,res,next){
         let idProducto = req.params.id;
         dbProducto.forEach(function(producto){
             if(producto.id == idProducto){
