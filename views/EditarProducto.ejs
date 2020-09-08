@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="no-js" lang="ES">
+<head> 
+    <title>WASSER/publica!</title>
+    <%- include('./partials/head') %> 
+</head>
+  
+<body>
+    <%- include('./partials/preloader') %>
+  <header>
+    <%- include('./partials/header') %>
+  </header>  
+
+<main>  
+       
+    <div class="form-register2">
+        <h4>Carga tu producto</h4>
+        <% dbProducto.forEach(producto => { %>
+            <% if (producto.id == idProducto) { %>
+          <form method="POST" action="/productos/EditarProducto/<%= producto.id %>?_method=PUT" enctype="multipart/form-data">
+          
+        <input class="controlls2" type="" name="name"  placeholder="Nombre producto" value="<%= producto.name %> " required>
+
+        <input class="controlls2" type="" name="colors" placeholder="Colors" value="<%= producto.colors %> " required>  
+        
+        <input class="controlls2" type="" name="price" placeholder="$ Precio" value="<%= producto.price %> " required>      
+        
+        <label for="Categorias"></label>
+            <select name="category" class="controlls2">
+                <% if (producto.category == "baño") { %>                
+                <option value="baño">Griferia Baño</option>
+                <% } else if (producto.category == "cocina") { %>
+                <option value="cocina">Griferia Cocina</option>
+                <% } else if (producto.category == "bachas") { %>
+                <option value="bachas">Bachas</option>
+                <% } else if (producto.category == "sanitarios") { %>
+                <option value="sanitarios">Sanitarios</option>
+                <% } else if (producto.category == "bañeras") { %>
+                <option value="bañeras">Bañeras y Duchas</option>
+                <% } else { %>
+                <option value="accesorios">Accesorios Varios</option> 
+                <% } %>
+                <option value="baño">Griferia Baño</option>
+                <option value="cocina">Griferia Cocina</option>
+                <option value="bachas">Bachas</option>
+                <option value="sanitarios">Sanitarios</option>
+                <option value="bañeras">Bañeras y Duchas</option>
+                <option value="accesorios">Accesorios Varios/option>
+            </select>
+        <h3>Agregue 1 imagen</h3>
+        <input class="controlls2"  type="file" name="image">
+
+      </label>
+        <label for="controlls2"></label>    
+        <div class="botons">
+          <label for="exampleFormControlTextarea1">Descripción</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"><%= producto.description %></textarea>
+      </div>
+                   
+      <div class="mt-5 mr-5 d-flex justify-content-center">
+        <a href="/productos" class="btn btn-outline-primary">Cancelar</a>
+      <button type="submit" class="btn btn-outline-primary">Guardar</button></div>
+
+       
+    </form>
+    <% } %>
+    <% }) %>    
+  </div>
+
+</main>
+
+<footer>
+    <%- include('./partials/footer') %>
+  </footer>           
+  
+    <%- include('./partials/scripts') %>  
+  
+  </body>
+  </html>

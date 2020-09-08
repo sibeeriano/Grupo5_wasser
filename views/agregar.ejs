@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="no-js" lang="ES">
+<head> 
+    <title>WASSER/publica!</title>
+    <%- include('./partials/head') %> 
+</head>
+  
+<body>
+    <%- include('./partials/preloader') %>
+  <header>
+    <%- include('./partials/header') %>
+  </header>  
+
+<main>  
+       
+    <div class="form-register2">
+        <h4>Carga tu producto</h4>
+        
+          <form method="POST" action="" enctype="multipart/form-data">
+          
+        <input class="controlls2" type="" name="name" id="name" placeholder="Nombre producto" required>
+
+        <input class="controlls2" type="" name="color" id="color" placeholder="Color" required>  
+        
+        <input class="controlls2" type="" name="price" id="price" placeholder="$ Precio" required>      
+        
+        <label for="Categorias"></label>
+            <select name="category" class="controlls2">
+                <option selected>Selecciona una Categoria</option>
+                <option value="baño">Griferia Baño</option>
+                <option value="cocina">Griferia Cocina</option>
+                <option value="bachas">Bachas</option>
+                <option value="sanitarios">Sanitarios</option>
+                <option value="bañeras">Bañeras y Duchas</option>
+                <option value="accesorios">Accesorios Varios</option> 
+        </select>
+        <h3>Agregue 1 imagen</h3>
+        <input class="controlls2"  type="file" name="image">
+
+      </label>
+        <label for="controlls2"></label>    
+        <div class="botons">
+          <label for="exampleFormControlTextarea1">Descripción</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+      </div>
+                   
+      <div class="mt-5 mr-5 d-flex justify-content-center">
+      <button type="submit" class="btn btn-outline-primary">Publicar</button></div>
+
+     </form>      
+  </div>
+
+</main>
+
+<footer>
+    <%- include('./partials/footer') %>
+  </footer>           
+  
+    <%- include('./partials/scripts') %>  
+  
+  </body>
+  </html>

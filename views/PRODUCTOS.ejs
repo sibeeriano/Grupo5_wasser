@@ -1,0 +1,60 @@
+
+<!doctype html>
+<html class="no-js" lang="ES">
+<head><title>WASSER/Producto</title>
+  <%- include('./partials/head') %>     
+</head>    
+
+<body>
+  <%- include('./partials/preloader') %>
+
+<header>
+  <%- include('./partials/header') %>
+</header> 
+
+  <main>
+    <h1>Todos nuestros productos <br>       (despues hago un banner, me quiero ir a dormir)</h1>
+    <br>
+    <div class="container">    
+      <div class="row">
+        <% productos.forEach(producto => { %>            
+          <div class="col-sm-3">
+            <div class="panel panel-primary">
+              <div class="panel-heading"><%- producto.name %>  </div>
+              <div class="panel-body"><a href="/productos/<%= producto.category %>/<%= producto.id %>"><img src="<%- producto.image %> " class="img-responsive" style="width:100%" alt="Image"></a></div>
+              <div class="panel-footer">$<%- producto.price %> </div>
+              <div class="d-flex justify-content-end">
+                
+                  <a href="/productos/<%= producto.category %>/<%= producto.id %>" class="btn2">editar</a>
+                 
+                <form action="/productos/delete/<%= producto.id %>?_method=delete" method="POST">
+                  <button class="btn2">Eliminar</button>
+                
+                
+
+                </form>
+            </div>    
+              <div class="panel-footer">
+                
+            
+              
+              </div>
+            </div>
+          </div>
+    
+    
+            <% }) %>
+       </div>
+    </div>  
+ 
+      
+      
+  </main>
+  <footer>
+        <%- include('./partials/footer') %>
+  </footer>           
+        <%- include('./partials/scripts') %>  
+  </body>
+  </html>
+      
+     

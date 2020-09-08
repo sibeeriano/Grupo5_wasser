@@ -13,7 +13,9 @@
 </header> 
 
 <main>
-      <div class="container">    
+  <!-- banner categorias-->  
+  
+  <div class="container">    
         <div class="row">
           <div class="col-sm-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -38,90 +40,27 @@
             </div>
           </div>
 
-          <!--espacio en blaco-->
+<!-- productos filtrados por la categoria elegida-->
 
-          <div class="container">    
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="panel-body"><img src="/stylesheets/img/categoria/espacio1.png" class="img-responsive" style="width:100%" alt="Image"></div>
-              </div>
-            </div>
-          </div>
-                            
-    <!-- search model begin -->
-    <div class="search-model-box" style="display: none;">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-btn">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Qué buscas?">
-            </form>
-        </div>
-    </div>              
-     <!-- Search model end -->   
-    <!-- Scroll Up -->
-    <div id="back-top" >
-        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
-    </div>
-    <div class="container">    
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="panel panel-primary">
-              <div class="panel-heading">GRIFERIA BAÑO</div>
-              <div class="panel-body"><a href="/catebanio"><img src="/stylesheets/img/categoria/griferiabanio.png" class="img-responsive" style="width:100%" alt="Image"></a></div>
-              <div class="panel-footer">Todo en griferia para tu baño.</div>
-              <div class="panel-footer">.</div>
-            </div>
-          </div>
-          <div class="col-sm-4"> 
-            <div class="panel panel-danger">
-              <div class="panel-heading">GRIFERIA COCINA</div>
-              <div class="panel-body"><a href="/catecocina"><img src="/stylesheets/img/categoria/griferiacocina.png" class="img-responsive" style="width:100%" alt="Image"></a></div>
-              <div class="panel-footer">Todo en griferia para tu cocina.</div>
-              <div class="panel-footer">.</div>
-            </div>
-          </div>
-          <div class="col-sm-4"> 
-            <div class="panel panel-success">
-              <div class="panel-heading">BACHAS</div>
-              <div class="panel-body"><a href="/bachas"><img src="/stylesheets/img/categoria/BACHAS.png" class="img-responsive" style="width:100%" alt="Image"></a></div>
-              <div class="panel-footer">Bachas para baño, cocina, lavaderos y jardin.</div>
-              <div class="panel-footer">.</div>
-            </div>
-          </div>
-        </div>
-      </div><br>
-
-      
-      <div class="container">    
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="panel panel-primary">
-              <div class="panel-heading">SANITARIOS</div>
-              <div class="panel-body" ><a href="/sanitarios"><img  src="/stylesheets/img/categoria/sanitarios.png" class="img-responsive" style="width:100%" alt="Image"></a></div>
-              <div class="panel-footer">Bidets e inodoros</div>
-              <div class="panel-footer">.</div>
-            </div>
-          </div>
-          <div class="col-sm-4"> 
-            <div class="panel panel-primary">
-              <div class="panel-heading">BAÑERAS Y DUCHAS</div>
-              <div class="panel-body"><a href="/banieras"><img src="/stylesheets/img/categoria/duchas.png" class="img-responsive" style="width:100%" alt="Image"></a></div>
-              <div class="panel-footer">Regaderas, Duchas, bañeras, etc</div>
-              <div class="panel-footer">.</div>
-            </div>
-          </div>
-          <div class="col-sm-4"> 
-            <div class="panel panel-primary">
-              <div class="panel-heading">ACCESORIOS VARIOS</div>
-              <div class="panel-body"><a href="/accesorios"><img src="/stylesheets/img/categoria/varios.png" class="img-responsive" style="width:100%" alt="Image"></a></div>
-              <div class="panel-footer">Complentos, muebles, espejos, etc</div>
-              <div class="panel-footer">.</div>
-            </div>
-          </div>
+<div class="container">    
+  <div class="row">
+    <% productos.forEach(producto => { %>            
+      <div class="col-sm-3">
+        <div class="panel panel-primary">
+          <div class="panel-heading"><%- producto.name %>  </div>
+          <div class="panel-body"><a href="/productos/<%= producto.category %>/<%= producto.id %>"><img src="<%- producto.image %> " class="img-responsive" style="width:100%" alt="Image"></a></div>
+          <div class="panel-footer">$<%- producto.price %> </div>
+          <div class="d-flex justify-content-end">
+           
+        </div>    
+          <div class="panel-footer">.</div>
         </div>
       </div>
-  
-      
+        <% }) %>
+   </div>
+</div>     
+    
+    
     </main>
 
     <footer>
