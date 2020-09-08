@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 const dbProducto = require('../data/database')
 const fs = require('fs');
 const path = require ('path');
