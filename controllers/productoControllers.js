@@ -2,7 +2,7 @@
 const dbProducto = require('../data/database')
 const fs = require('fs');
 const path = require ('path');
-const { rawListeners } = require ('process')
+
 
 module.exports={
     listar:function(req, res){

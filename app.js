@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const methodOverride = require("method-override");
+
 var indexRouter = require('./routes/index');
 var productosRouter = require('./routes/producto');
 
@@ -21,6 +23,8 @@ app.use(express.json());
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(methodOverride('_method'))
 
 app.use('/', indexRouter);
 app.use('/productos', productosRouter);
