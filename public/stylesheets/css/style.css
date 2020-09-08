@@ -289,9 +289,6 @@ a,
 
 }
 
-.row2{
-  
-}
 
 
 /* line 67, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
@@ -310,51 +307,115 @@ a {
 a:hover {
   color: #fff;
 }
-
-.footer_trust_top {
-  width: 100%;
-  margin: 20px auto;
-  text-align: center;
+/*________________________FOOTER______________________________________________________________________ */
+.full {
+  width: 100%;    
 }
-
-.footer_trust_top p {
-  font-family: montserrat;
-  font-size: 18px;
-  font-weight: 400;
-  color: rgb(0, 0, 0, 0.5);
-}
-
-  .footer-left {
-    padding-left: 0px;
-    justify-content: flex-start;
-  }
-  .footer-right {
-    margin: 0 auto;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .footer_main {
-    margin: 30px 0px 0px 0px;
-   ;
-  }
-.footer_copyright p {
-  font-size: 12px;
-  color: rgb(0,0,0,0.5);
-padding-top: 20px;
+.gap {
+height: 30px;
+width: 100%;
+clear: both;
+display: block;
 }
 .footer {
-  position: relative;
-  
+background:  #406d96;
+height: auto;
+padding-bottom: 30px;
+position: relative;
+width: 100%;
+border-bottom: 1px solid #CCCCCC;
+border-top: 1px solid #DDDDDD;
 }
-.footer2 {
-  position: center;
-  top:-125px;
-  bottom:0;
-  right:0;
-  left: 200px;
+.footer p {
+margin: 0;
+}
+.footer img {
+max-width: 100%;
+}
+.footer h3 {
+color: white;
+font-size: 18px;
+font-weight: 600;
+line-height: 27px;
+padding: 40px 0 0px;
+text-transform: uppercase;
+margin-bottom: 15px;
 }
 
+.footer h4 {
+color: white;
+font-size: 2em;
+font-weight: 600;
+line-height: 38px;
+padding: 40px 0 10px;
+font-family: cursive;
+font-weight: lighter
+}
+
+.footer ul {
+font-size: 13px;
+list-style-type: none;
+margin-left: 0;
+padding-left: 0;
+margin-top: 0px;
+color: #7F8C8D;
+padding: 0 0 8px 0;
+}
+
+.email{
+border-bottom: 3px solid #fff;
+}
+.footer ul li a {
+padding: 0 0 12px 0;
+display: block;
+}
+.footer a {
+color: white;
+font-weight: lighter;
+}
+
+.footer p {
+color: white;
+font-weight: lighter;
+font-size: 
+}
+
+.footer a:hover {
+text-decoration:none;
+font-weight: bold;
+}
+.supportLi h4 {
+font-size: 20px;
+font-weight: lighter;
+line-height: normal;
+margin-bottom: 0 !important;
+padding-bottom: 0;
+}
+
+.bg-gray {
+background-image: -moz-linear-gradient(center bottom, #BBBBBB 0%, #F0F0F0 100%);
+box-shadow: 0 1px 0 #B4B3B3;
+}
+
+
+.footer a {
+color: #c3ceda;
+font-size: 15px;
+}
+
+.footer-bottom {
+margin-top: 2em;
+border-top: 1px solid #DDDDDD;
+padding-top: 20px;
+padding-bottom: 10px;
+}
+.footer-bottom p.pull-left {
+padding-top: 6px;
+font-size: 0.75em
+}
+
+
+/*______________________________________________________________________________________________ */
 .emailsignup {
   font-family:"Muli", sans-serif;;
   font-size: 16px;

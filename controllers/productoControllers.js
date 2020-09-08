@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const dbProducto = require('../data/database')
 const fs = require('fs');
 const path = require ('path');
@@ -24,6 +25,7 @@ module.exports={
             productos:productos
         })
     },
+
 
     producto: function(req, res) { //detalle de producto
         let id=req.params.id
