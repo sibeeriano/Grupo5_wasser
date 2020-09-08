@@ -16,3 +16,11 @@ miercoles 27:lean bucco termino los archivos json, los revisamos y los agregó a
 viernes 28: tuvimos reunion para hablar de las cosas faltantes del sprint, empezamos con el SCRUM entre los tres.
 
 lunes 31 y martes 1: nos reunimos para seguir con el SCRUM.
+
+Martes 1: Nos reunimos para resolver conflictos entre las rutas.
+
+Jueves 3: Se limpio y se reorganizó el repositorio y tuvimos una reunion con Eric para solucionar unos errores que no nos dejaban avanzar. Lo pudimos solucionar.
+
+sabado 5: se ultimaron detalles de la logica para agregar productos.
+
+domingo 6 y lunes 7: Terminadas los metodos put y delete. Entregado lunes por la noche. 

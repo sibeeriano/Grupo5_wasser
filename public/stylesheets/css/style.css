@@ -432,10 +432,9 @@ font-size: 0.75em
 
 
 /* line 84, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
-a,
+
 button {
-  color: #000000;
-  outline: medium none;
+  -ms-flex-align: center;
 }
 
 /* line 89, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
