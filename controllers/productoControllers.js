@@ -12,6 +12,13 @@ module.exports={
         });
     },
 
+    listarTodos:function(req, res){
+        res.render('todosLosProductos',{
+            title:"Nuestros productos",
+            productos:dbProducto
+        });
+    },
+
     categorias:function(req,res){
 
         let cat=req.params.cat
@@ -110,8 +117,21 @@ module.exports={
         dbProducto.splice(borrar,1)
         fs.writeFileSync(path.join(__dirname,"..",'data', "products.json"),JSON.stringify(dbProducto),"utf-8")
         res.redirect('/productos')
-    }
+    },
     
+    search:function(req,res){
+        let buscar = req.query.search;
+        let resultados=[];
+        dbProducto.forEach(producto=>{
+            if(producto.name.toLowerCase().includes(buscar.toLowerCase())){
+                resultados.push(producto)
+            }
+        })
+        res.render('resultados',{
+            title:"Resultado de la busqueda",
+            productos:resultados
+        })
+    }
 }
 
 

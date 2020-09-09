@@ -7,5 +7,7 @@ module.exports={
 
     },
 
-    
+    sobreNosotros:function(req,res){
+        res.render('sobrenosotros')
+    }
 }

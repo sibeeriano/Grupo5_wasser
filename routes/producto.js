@@ -19,6 +19,9 @@ let upload = multer({storage:storage})
 
 
 router.get('/',controller.listar);
+router.get('/todos',controller.listarTodos);
+
+router.get('/search',controller.search);
 
 router.get('/agregar', controller.agregar);
 router.post('/agregar',upload.any(), controller.publicar);
