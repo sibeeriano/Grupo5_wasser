@@ -24,13 +24,15 @@
   <div class="container">    
     <div class="row">
       <% producto.forEach(producto => { %>
-        
-      <div class="col-lg-6">
+        <div class="col-lg-1">
+        </div>
+      <div class="col-lg-4">
         
         <img src="/images/imagenProducto/<%=producto.image %> " class="img-responsive" style="width:100%" alt="Image"></a>
             
         </div>
-      
+        <div class="col-lg-1">
+        </div>
           <!-- /.col-lg-8 -->
           <div class="col-lg-6">
             <h1 class="font-weight-light"><%- producto.name %></h1>
