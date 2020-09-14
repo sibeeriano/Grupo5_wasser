@@ -15,13 +15,20 @@
     <main>
     <section class="form-register2">
         <a href:""> <h4>Iniciar Sesión</h4></a>
-        <input class="controlls2" type="email" name="correo" id="correo" placeholder="Ingrese su Correo" required>
+        <input class="controlls2" type="email" name="email" id="email" aria-describedby="emailHelp" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" placeholder="Ingrese su Correo" >
+        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
         <input class="controlls2" type="password" name="contraseña" id="contraseña" placeholder="Ingrese su Contraseña" required>   
+        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.pass)?errors.pass.msg: "" %> </small>
+
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" name="recordar">
+          <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+        </div>
+
+
         <section class="form-register">
             
-            
-            
-             <input class="botons" type="submit" value="Iniciar Sesión">
+           <input class="botons" type="submit" value="Iniciar Sesión">
              <p><a href="/recuperar">Olvide mi contraseñá</a></p>
         
     </section>
