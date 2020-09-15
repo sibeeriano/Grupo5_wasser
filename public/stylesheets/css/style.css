@@ -377,7 +377,7 @@ font-weight: lighter;
 .footer p {
 color: white;
 font-weight: lighter;
-font-size: 
+ 
 }
 
 .footer a:hover {
@@ -1966,3 +1966,15 @@ hr {
 
 /*# sourceMappingURL=style.css.map */
 
+.formularioregistroo{
+   width: 800px; margin: 0 auto;
+    
+  }; 
+ .col-12 .regis
+ {
+  width: 800px; margin: 0 auto;
+ }
+  .form-group{
+    align-items: center;
+  }
+  

@@ -1,13 +1,14 @@
-const {check,validatorResult,body} = require("express-validator");
+const dbUsers = require("../data/dbUsers")
+const {check,validationResult,body} = require("express-validator");
 
 module.exports = [
-     check("firstname")
+     check("nombre")
      .isLength({
          min:1
      })
      .withMessage("Debes ingresar un nombre"),
 
-     check("lastname")
+     check("apellido")
      .isLength({
 
         min:1
@@ -18,6 +19,18 @@ module.exports = [
      .isEmail()
      .withMessage("Debes ingresar un email valido"),
      
+    body("email")
+    .custom(function(value){
+     for(let i = 0; i<dbUsers.length;i++){
+         if(dbUsers[i].email == value){
+             return false 
+         }
+     }    
+           return true
+    })
+    .withMessage("Este Email ya esta registrado :("),
+
+
      check("password")
      .isLength({
          min:6,
@@ -25,4 +38,14 @@ module.exports = [
      })
      .withMessage("Debes ingresar una contraseña que contenga entre 6 y 12 caracteres"),
    
-]
+
+     body("password2")
+     .custom(function(value,{req}){
+         if(value != req.body.password){
+             return false
+         }
+         return true
+     })
+       
+     .withMessage("Las contraseñas no coinciden")
+    ]
