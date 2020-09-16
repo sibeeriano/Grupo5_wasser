@@ -12,7 +12,12 @@ router.get("/registrarse", controller.register);
 router.post("/registrarse", registerValidator ,controller.processRegister);
 
 
-
+router.get('/cerrarsesion', controller.cerrarsesion);
 router.get("/profile", controller.profile);
+
+//el middlewares//
+router.get('/', function(req, res, next) {
+    res.send('respond with a resource');
+  });
 
 module.exports = router;

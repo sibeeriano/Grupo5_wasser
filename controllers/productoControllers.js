@@ -130,6 +130,7 @@ module.exports={
         res.render('resultados',{
             title:"Resultado de la busqueda",
             productos:resultados
+           
         })
     }
 }

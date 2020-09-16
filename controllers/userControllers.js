@@ -47,7 +47,8 @@ module.exports={
             res.render("registro",{
                 title: "registro de Usuarios",
                 errors:errors.mapped(),
-                old:req.body
+                old:req.body,
+                user:req.session.user
             })
         }
     },
@@ -77,6 +78,13 @@ module.exports={
         })
 
         
-    }
+    },
 
+    cerrarsesion:function(req,res){
+        req.session.destroy();
+        if(req.cookies.usuarioWasser){
+            res.cookie('usuarioWasser','',{maxAge:16})
+        }
+        res.redirect('/')
+    }
 }

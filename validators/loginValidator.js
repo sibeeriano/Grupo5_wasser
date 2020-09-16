@@ -7,7 +7,7 @@ module.exports= [
 
     check("email")
      .isEmail()
-     .withMessage("debes ingresar un Email valido "),
+     .withMessage("Debes ingresar un Email valido "),
 
      body("email")
      .custom(function(value){

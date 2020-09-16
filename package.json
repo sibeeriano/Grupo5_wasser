@@ -2,7 +2,7 @@
   "name": "wasser",
   "version": "0.0.0",
   "private": true,
-  "Encargado de Express": "Facundo Vara",
+  "Encargado de Express": "Facundo Vara, Leandro Uriel Turrion, Leandro Bucco",
   "scripts": {
     "start": "node ./bin/www"
   },
