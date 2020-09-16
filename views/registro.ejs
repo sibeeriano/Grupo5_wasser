@@ -60,8 +60,8 @@
 
     </div>
       
-    <div class="col-12 col-lg-6 mt-2">
-      <div class="botons2">
+    <div class="col-12 col-lg-12 mt-12">
+      <div class="controlls2">
         <input type="checkbox" class="botons2 <%= (typeof old != 'undefined' && old.bases)?"is-valid":(typeof errors != 'undefined' && errors.bases)?"is-invalid": ""  %>" id="customCheck1" name="bases" required>
         <label class="" for="customCheck1">Acepto las bases y condiciones</label>
         <small class="text-danger"><%= (typeof errors != 'undefined' && errors.bases)?errors.bases.msg: "" %> </small>
@@ -69,7 +69,7 @@
     </div> 
 
 
-      <div class="botonregistrarse">
+      <div class="control">
         <button type="submit" class="botonregistrar">
           Registrarse
         </button>

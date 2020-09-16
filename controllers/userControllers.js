@@ -106,5 +106,25 @@ module.exports={
             res.cookie('usuarioWasser','',{maxAge:16})
         }
         res.redirect('/')
-    }
+    },
+    usuarios:function(req, res){
+        res.render('usuarios',{
+            title:"usuarios registrados",
+            productos: dbUsers,
+            user:req.session.user
+        });
+    },
+    delete: (req,res)=>{
+        let userdelete = req.params.id;
+        let borrar;
+        dbUsers.forEach((usuario)=>{
+            if(usuario.id == userdelete){
+                borrar = dbUsers.indexOf(usuario)
+            }
+        })
+        dbUsers.splice(borrar,1)
+        fs.writeFileSync(path.join(__dirname,"..",'data', "dbUsers.json"),JSON.stringify(dbUsers),"utf-8")
+        res.redirect('/user/usuarios')
+    },
 }
+
