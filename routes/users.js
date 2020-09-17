@@ -15,6 +15,9 @@ router.post("/registrarse", registerValidator ,controller.processRegister);
 router.get('/cerrarsesion', controller.cerrarsesion);
 router.get("/profile", controller.profile);
 
+router.get('/usuarios', controller.usuarios);//lista todos los usuarios
+router.delete('/delete/:id', controller.delete)//se borran mas rapido
+
 //el middlewares//
 router.get('/', function(req, res, next) {
     res.send('respond with a resource');

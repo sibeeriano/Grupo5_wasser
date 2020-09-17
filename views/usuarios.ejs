@@ -1,0 +1,70 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>   
+    <title>WASSER/Sign in</title>
+    <%- include('./partials/head') %>     
+</head>    
+
+<body>
+  <%- include('./partials/preloader') %>
+
+<header>
+  <%- include('./partials/header') %>
+</header>
+
+<main>
+    <br>
+<h1>Listado de usuarios registrados</h1>
+<br>
+
+  
+    <table class="table table-responsive">
+        
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                
+                <th>BAN</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% productos.forEach(usuario => { %>    
+            <tr>
+                
+                <td><%- usuario.nombre %> </td>
+                <td><%- usuario.apellido %></td>
+                <td><%- usuario.email %></td>
+                
+                
+                <td><form onclick="return confirm('Estas seguro que querés eliminaro el prodcuto?')" action="/user/delete/<%= usuario.id %>?_method=delete" method="POST">
+                    <button class="">Eliminar</button>
+                    </form></td>    
+            </tr>
+            <% }) %>
+        </tbody>
+        
+            </table>
+    
+
+
+
+
+
+
+
+
+</main>
+
+<footer>
+    <%- include('./partials/footer') %>
+</footer>           
+    <%- include('./partials/scripts') %>  
+</body>
+</html>
+
+
+
+
+
