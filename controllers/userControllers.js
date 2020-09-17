@@ -63,7 +63,27 @@ module.exports={
      
     processLogin:function(req,res){
         let errors = validationResult(req);
-        res.send(errors.mapped());
+        if (errors.isEmpty()){
+            dbUsers.forEach(usuarioWasser =>{
+                if(usuarioWasser.email == req.body.email){
+                    req.session.user = {
+                        id:usuarioWasser.id,
+                        nombre: usuarioWasser.nombre,
+                        apellido: usuarioWasser.apellido,
+                        rol:usuarioWasser.rol,
+                        email:usuarioWasser.email
+                    }
+                }
+            })
+            
+            return res.redirect('/')
+        }else{
+            return res.render('iniciarsesion',{
+                title:"Ingreso de Usuario",
+                error: errors.mapped(),
+                old:req.body
+            })
+        }
 
     },
 

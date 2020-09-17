@@ -1,40 +1,34 @@
+// modulos//
 var express = require('express');
 var router = express.Router();
-const controller = require('../controllers/productoControllers')
 
-const multer = require ('multer');
-const path = require ('path');
+// controllers //
+const controller = require('../controllers/productoControllers');
+const recordarUsuarios = require('../middlewares/recordarUsuarios');
 
-let storage = multer.diskStorage({
-    destination:(req,file,callback)=>{
-        callback(null,'public/images/imagenProducto')
-    },
-    filename:(req,file,callback)=>{
-        callback(null,file.fieldname + Date.now()+ path.extname(file.originalname))
-    }
-})
+// middlewares //
 
-let upload = multer({storage:storage})
+const RecordarUser = require ('../middlewares/recordarUsuarios')
+const multerProduct = require('../middlewares/multerProduct')
 
-
-
+//rutas//
 router.get('/',controller.listar);
 router.get('/todos',controller.listarTodos);
 
 router.get('/search',controller.search);
 
-router.get('/agregar', controller.agregar);
-router.post('/agregar',upload.any(), controller.publicar);
+router.get('/agregar', RecordarUser,controller.agregar);
+router.post('/agregar',multerProduct.any(),RecordarUser,controller.publicar);
 
-router.get('/EditarProducto/:id', controller.vistaEditar)
-router.put('/EditarProducto/:id', upload.any(), controller.guardarEditar)
+router.get('/EditarProducto/:id', RecordarUser,controller.vistaEditar)
+router.put('/EditarProducto/:id', multerProduct.any(), RecordarUser,controller.guardarEditar)
 
 router.get('/:cat?',controller.categorias);
 router.get('/:cat?/:id?',controller.producto);
 
 
 //router.put('/EditarProducto/:id', upload.any(),controller.guardarEditar)
-router.delete('/delete/:id', controller.delete)
+router.delete('/delete/:id',RecordarUser, controller.delete)
 
 
 
