@@ -16,6 +16,7 @@ module.exports={
        
     },
     processRegister:function(req,res){
+    
        let errors = validationResult(req);
        let lastID = 0;
        if(dbUsers.length > 0){
@@ -35,7 +36,7 @@ module.exports={
             nombre:req.body.nombre,
             apellido:req.body.apellido,
             email:req.body.email,
-            avatar:req.files,
+            avatar:(req.files[0])?req.files[0].filename:"default.png",
             password:bcrypt.hashSync(req.body.password,10),
             rol:"user"
         }
@@ -75,6 +76,9 @@ module.exports={
                     }
                 }
             })
+            if(req.body.recordar){
+                res.cookie('userioWasser',req,session.user,{maxAge:1000*60*2})
+            }
             
             return res.redirect('/')
         }else{
