@@ -17,7 +17,6 @@ module.exports={
     },
     processRegister:function(req,res){
        let errors = validationResult(req);
-       
        let lastID = 0;
        if(dbUsers.length > 0){
            dbUsers.forEach(user=>{
@@ -36,6 +35,7 @@ module.exports={
             nombre:req.body.nombre,
             apellido:req.body.apellido,
             email:req.body.email,
+            avatar:req.files,
             password:bcrypt.hashSync(req.body.password,10),
             rol:"user"
         }
