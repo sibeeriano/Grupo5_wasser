@@ -57,16 +57,20 @@
       class="controlls2 <%= (typeof errors != 'undefined' && errors.password2)?"is-invalid": ""  %>"
       id="password2" placeholder="Reingresar contraseña" name="password2"/>
       <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password2)?errors.password2.msg: "" %> </small>
-
-      <div class="form-group col-12 ">
+    
+      
+    <div class="form-group col-12 ">
         <div class="custom-file mt-4">
-          <input type="file" class="custom-file-input" id="customFileLang" lang="es" name="avatar">
-          <label class="custom-file-label" for="customFileLang">Seleccionar Avatar</label>
+          <input class="controlls2"  type="file" id="customFileLang" lang="es" name="avatar">
           <small class="text-danger"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %></small>
         </div>
       </div>
-
     </div>
+    <br>
+    
+
+
+
     <div class="col-12 col-lg-12 mt-12">
       <div class="controlls2">
         <input type="checkbox" class="botons2 <%= (typeof old != 'undefined' && old.bases)?"is-valid":(typeof errors != 'undefined' && errors.bases)?"is-invalid": ""  %>" id="customCheck1" name="bases" required>
