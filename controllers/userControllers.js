@@ -77,7 +77,7 @@ module.exports={
                 }
             })
             if(req.body.recordar){
-                res.cookie('userioWasser',req,session.user,{maxAge:1000*60*2})
+                res.cookie('usuarioWasser',req.session.user,{maxAge:1000*60*2})
             }
             
             return res.redirect('/')
