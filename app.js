@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require("express-session")
 
-const methodOverride = require("method-override");
+const methodOverride = require("method-override") ;
 
 var indexRouter = require('./routes/index');
 var productosRouter = require('./routes/producto');
