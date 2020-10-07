@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require("express-session")
+var cookieCheck = require('./middlewares/cookieCheck');//agregado octubre
 
 const methodOverride = require("method-override") ;
 
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(methodOverride('_method'));
 app.use(session({secret:"Wasser"}));
+app.use(cookieCheck); //agregado octubre
 
 app.use('/', indexRouter);
 app.use('/productos', productosRouter);

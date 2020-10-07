@@ -1,13 +1,12 @@
 const dbUsers = require("../data/dbUsers");
 
 const {check,validationResult,body} = require("express-validator");
-
 const bcrypt = require("bcrypt")
-module.exports= [
 
+module.exports= [
     check("email")
      .isEmail()
-     .withMessage("Debes ingresar un Email valido "),
+     .withMessage("Debes ingresar un email válido "),
 
      body("email")
      .custom(function(value){
@@ -21,7 +20,7 @@ module.exports= [
              return true
          }
      })
-         .withMessage("el usuario no esta registrado , registrate!"),
+         .withMessage("El usuario no esta registrado."),
      
      
          body('password')

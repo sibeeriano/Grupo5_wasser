@@ -1,4 +1,4 @@
-const dbProduct = require("../data/dbProduct");
+const dbProduct = require("../data/database");
 
 
 module.exports={

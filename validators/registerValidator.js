@@ -28,7 +28,7 @@ module.exports = [
      }    
            return true
     })
-    .withMessage("Este Email ya esta registrado :("),
+    .withMessage("Este Email ya esta registrado"),
 
 
      check("password")
@@ -47,8 +47,8 @@ module.exports = [
          return true
      })
        
-     .withMessage("Las contraseñas no coinciden"),
+     .withMessage("Las contraseñas no coinciden"),/*
      check('bases')
      .isString('on')
-     .withMessage('Debe aceptar las bases y condiciones')
+     .withMessage('Debe aceptar las bases y condiciones')*/
     ]

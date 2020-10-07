@@ -14,7 +14,7 @@ router.post("/registrarse",multerAvatar.any(), registerValidator ,controller.pro
 
 
 router.get('/cerrarsesion', controller.cerrarsesion);
-router.get("/profile", controller.profile);
+//router.get("/profile", controller.profile);
 
 router.get('/usuarios', controller.usuarios);//lista todos los usuarios
 router.delete('/delete/:id', controller.delete)//se borran mas rapido

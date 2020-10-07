@@ -46,7 +46,11 @@
                                                         <li><a href="/productos/sanitarios">Sanitarios</a></li>
                                                         <li><a href="/productos/bañeras">Bañeras y Duchas</a></li>
                                                         <li><a href="/productos/accesorios">Accesorios varios</a></li>
-                                                        <li><a href="/productos/todos">Ver todos los productos</a></li>
+                                                        <% if (typeof user == "admin") { %>
+                                                            <li class="nav-item"><a href="/productos" href="#">PRODUCTOS  / ADMIN</a></li>
+                                                          <% }else{ %>
+                                                            <li class="nav-item"><a href="/productos/todos" href="#">PRODUCTOS</a></li>
+                                                          <% } %>
                                                     </ul>
                                                 </li>
                                             
