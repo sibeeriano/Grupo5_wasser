@@ -10,19 +10,22 @@ router.get("/iniciarsesion", controller.login);
 router.post("/iniciarsesion", loginValidator, controller.processLogin);
 
 router.get("/registrarse", controller.register);
-router.post("/registrarse",multerAvatar.any(), registerValidator ,controller.processRegister);
+router.post("/registrarse", multerAvatar.any(), registerValidator, controller.processRegister);
 
 
 router.get('/cerrarsesion', controller.cerrarsesion);
-//router.get("/profile", controller.profile);
+
+router.get("/profile", controller.profile);
+router.put("/updateProfile/:id", multerAvatar.any(), controller.updateProfile);
+
 
 router.get('/usuarios', controller.usuarios);//lista todos los usuarios
 router.delete('/delete/:id', controller.delete)//se borran mas rapido
 
 //el middlewares//
-router.get('/', function(req, res, next) {
-    res.send('respond with a resource');
-  });
+router.get('/', function (req, res, next) {
+  res.send('respond with a resource');
+});
 
 
 module.exports = router;

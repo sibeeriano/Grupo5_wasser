@@ -3,15 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const methodOverride = require("method-override") ;
+
 var session = require("express-session")
 var cookieCheck = require('./middlewares/cookieCheck');//agregado octubre
-
-const methodOverride = require("method-override") ;
 
 var indexRouter = require('./routes/index');
 var productosRouter = require('./routes/producto');
 var userRouter = require ('./routes/users');
-
+let storeRouter = require('./routes/store');
 
 var app = express();
 
@@ -34,9 +34,7 @@ app.use(cookieCheck); //agregado octubre
 app.use('/', indexRouter);
 app.use('/productos', productosRouter);
 app.use('/user', userRouter);
-
-
-
+app.use('/store',storeRouter);
 
 
 // catch 404 and forward to error handler

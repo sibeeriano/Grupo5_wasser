@@ -12,7 +12,7 @@ module.exports = (sequelize,dataTypes) => {
             allowNull:false
         },
         precio: {
-            type:dataTypes.string(45),
+            type:dataTypes.STRING(45),
             allowNull:false
         },
         descripcion: {
@@ -30,7 +30,7 @@ module.exports = (sequelize,dataTypes) => {
         underscored: true
     }
 
-    const product = sequelize.define(alias,cols,config);
+    const Product = sequelize.define(alias,cols,config);
 
-    return product;
+    return Product;
 }
