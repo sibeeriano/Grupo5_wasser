@@ -144,21 +144,17 @@ module.exports = {
         })
        
     },
-    delete: function (req, res) {
-        let userdelete = req.params.id;
-        let borrar;
-        dbUsers.forEach((usuario) => {
-            if (usuario.id == userdelete) {
-                borrar = dbUsers.indexOf(usuario)
-            }
-        })
-        dbUsers.splice(borrar, 1)
-        fs.writeFileSync(path.join(__dirname, "..", 'data', "dbUsers.json"), JSON.stringify(dbUsers), "utf-8")
-        res.redirect('/')
+    delete: function(req,res){
+       
+        //cerrar la session y borrar cookie
+        req.session.destroy();
+        if(req.cookies.userWasser){
+            res.cookie('userWasser','',{maxAge:-1});
+        }
         //borrar el registro de la base de datos
-        db.Users.destroy({
-            where: {
-                id: req.params.id
+        db.User.destroy({
+            where:{
+                id:req.params.id
             }
         })
         return res.redirect('/')
