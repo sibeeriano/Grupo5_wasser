@@ -1,5 +1,5 @@
 module.exports = (sequelize,dataTypes) => {
-    let alias = "products";
+    let alias = "Products";
     let cols = {
         id: {
             type:dataTypes.INTEGER(11),
@@ -30,7 +30,9 @@ module.exports = (sequelize,dataTypes) => {
         underscored: true
     }
 
+    
     const Product = sequelize.define(alias,cols,config);
 
+     
     return Product;
 }

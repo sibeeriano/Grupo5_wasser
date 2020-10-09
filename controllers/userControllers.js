@@ -88,7 +88,7 @@ module.exports = {
 
     profile: function (req, res) {
         if (req.session.user) {
-            db.Users.findByPk(req.session.user.id)
+            db.User.findByPk(req.session.user.id)
                 .then(user => {
                     res.render('profile', {
                         title: "Perfil de Usuario",

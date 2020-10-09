@@ -2,6 +2,7 @@
 const dbProducto = require('../data/database')
 const fs = require('fs');
 const path = require ('path');
+const db = require("../database/models")
 
 
 module.exports={
@@ -44,42 +45,45 @@ module.exports={
                 producto:producto
         });
     },
-
-    agregar:function(req,res){       
-        res.render('agregar',{
-        title:"Agregar Producto",
-            
-            })
+       
+       agregar:function(req,res){
+        db.Categories.findAll()
+       .then(categorias => {
+           res.render("agregar",{
+           title:"¡Agrega tu producto!",
+           categorias:categorias
+           })
+       })
+       .catch(errores => {
+        res.send(errores)
+    })
     },
 
     publicar: function(req,res,next){
-    
-        let lastID= 1;
-
-        dbProducto.forEach(producto => {
-            if(producto.id > lastID){
-                lastID = producto.id
-            }            
-        });
-    
         
-
-        let newProduct ={
-            id: lastID + 1,
-            name: req.body.name.trim(),
-            colors: req.body.color,
-            price: req.body.price,
-            category: req.body.category,
-            description: req.body.description,
-            image: (req.files[0])?req.files[0].filename:"default-image.png" //NO FUNCIONA
+        db.User.findOne({
+            where:{
+                id:req.session.user.id
             }
+            .then(user => {
+                db.Products.create({
+                    nombre : req.body.nombre.trim(),
+                    precio : Number(req.body.precio),
+                    descripcion : req.body.descripcion,
+                    imagenes : req.files[0].filename
 
-            dbProducto.push(newProduct);
-
-            fs.writeFileSync(path.join(__dirname,"..",'data', "products.json"),JSON.stringify(dbProducto),"utf-8")
-            
-            res.redirect('/productos')
-    },
+                })
+                .then(result =>{
+                    console.log(result);
+                    res.redirect("/agregar")
+                })
+                .catch(error =>{
+                    res.send(error)
+                })
+            })
+      
+    })
+},
     
     vistaEditar:function(req,res,next){
         let idProducto = req.params.id;

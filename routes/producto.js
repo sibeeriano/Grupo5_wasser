@@ -4,7 +4,6 @@ var router = express.Router();
 
 // controllers //
 const controller = require('../controllers/productoControllers');
-const recordarUsuarios = require('../middlewares/recordarUsuarios');
 
 // middlewares //
 
@@ -17,11 +16,10 @@ router.get('/todos',controller.listarTodos);
 
 router.get('/search',controller.search);
 
-router.get('/agregar', RecordarUser,controller.agregar);
 router.post('/agregar',multerProduct.any(),RecordarUser,controller.publicar);
 
 router.get('/EditarProducto/:id', RecordarUser,controller.vistaEditar)
-router.put('/EditarProducto/:id', multerProduct.any(), RecordarUser,controller.guardarEditar)
+router.put('/EditarProducto/:id', multerProduct.any(), RecordarUser,controller.guardarEditar)//Actualizar
 
 router.get('/:cat?',controller.categorias);
 router.get('/:cat?/:id?',controller.producto);

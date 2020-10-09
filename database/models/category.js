@@ -23,5 +23,6 @@ module.exports = (sequelize,dataTypes) => {
     
     const category = sequelize.define(alias,cols,config);
 
+    
     return category;
 }
