@@ -16,6 +16,7 @@ router.get('/todos',controller.listarTodos);
 
 router.get('/search',controller.search);
 
+router.get('/agregar',controller.publicar)
 router.post('/agregar',multerProduct.any(),RecordarUser,controller.publicar);
 
 router.get('/EditarProducto/:id', RecordarUser,controller.vistaEditar)

@@ -46,20 +46,9 @@ module.exports={
         });
     },
        
-       agregar:function(req,res){
-        db.Categories.findAll()
-       .then(categorias => {
-           res.render("agregar",{
-           title:"¡Agrega tu producto!",
-           categorias:categorias
-           })
-       })
-       .catch(errores => {
-        res.send(errores)
-    })
-    },
-
+   
     publicar: function(req,res,next){
+        
         
         db.User.findOne({
             where:{
