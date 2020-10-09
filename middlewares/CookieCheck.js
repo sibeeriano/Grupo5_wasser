@@ -1,4 +1,4 @@
-const dbUsers = require('../data/dbUsers');
+const db = require('../database/models');
 
 module.exports = function(req,res,next){
     if(req.cookies.userWasser){

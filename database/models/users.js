@@ -1,10 +1,10 @@
 module.exports = (sequelize,dataTypes) => {
 
-    let alias = "users"
+    let alias = "User"
 
     let cols = {
         id : {
-            type:dataTypes.INTEGER(11),
+            type:dataTypes.INTEGER(),
             allowNull: false,
             autoIncrement:true,
             primaryKey:true
@@ -31,6 +31,7 @@ module.exports = (sequelize,dataTypes) => {
         avatar : {
             type:dataTypes.STRING(45)
         }
+        
       
     }
 
@@ -40,7 +41,7 @@ module.exports = (sequelize,dataTypes) => {
         underscored: true //se agregan automaticamente, si no estan presentes se le pone false
     }
 
-    const user = sequelize.define(alias,cols,config);
+    const User = sequelize.define(alias,cols,config);
 
-    return user;
+    return User;
 }

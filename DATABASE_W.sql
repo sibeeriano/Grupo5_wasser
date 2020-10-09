@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `WASSER`.`categories` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
-
+4
 -- -----------------------------------------------------
 -- Table `WASSER`.`users`
 -- -----------------------------------------------------
