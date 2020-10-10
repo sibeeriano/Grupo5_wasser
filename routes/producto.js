@@ -12,11 +12,11 @@ const multerProduct = require('../middlewares/multerProduct')
 
 //rutas//
 router.get('/',controller.listar);
-router.get('/todos',controller.listarTodos);
+router.get('/todos',controller.listar);
 
 router.get('/search',controller.search);
 
-router.get('/agregar',controller.publicar)
+router.get('/agregar',controller.publicarpost)
 router.post('/agregar',multerProduct.any(),RecordarUser,controller.publicar);
 
 router.get('/EditarProducto/:id', RecordarUser,controller.vistaEditar)
@@ -26,7 +26,6 @@ router.get('/:cat?',controller.categorias);
 router.get('/:cat?/:id?',controller.producto);
 
 
-//router.put('/EditarProducto/:id', upload.any(),controller.guardarEditar)
 router.delete('/delete/:id',RecordarUser, controller.delete)
 
 

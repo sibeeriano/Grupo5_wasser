@@ -1,3 +1,4 @@
+
 module.exports = (sequelize,dataTypes) => {
     let alias = "Products";
     let cols = {
@@ -17,11 +18,14 @@ module.exports = (sequelize,dataTypes) => {
         },
         descripcion: {
             type:dataTypes.STRING(300),
-            allowNull:false
+            
         },
         imagenes: {
             type:dataTypes.STRING(100),
-            allowNull:false
+           
+        },
+        id_categoria: {
+            type:dataTypes.INTEGER(11),
         }
     }
     let config = {
