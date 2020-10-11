@@ -11,8 +11,8 @@ const RecordarUser = require ('../middlewares/recordarUsuarios')
 const multerProduct = require('../middlewares/multerProduct')
 
 //rutas//
-router.get('/',controller.listar);
-router.get('/todos',controller.listar);
+router.get('/',controller.listarAdmin);
+router.get('/todos',controller.listarTodos);
 
 router.get('/search',controller.search);
 

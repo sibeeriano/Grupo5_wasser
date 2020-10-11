@@ -6,7 +6,7 @@ const db = require("../database/models")
 
 
 module.exports = {
-    listar: function (req, res) {
+    listarAdmin: function (req, res) {
         db.Products.findAll()
         .then(result => {
 
@@ -22,10 +22,17 @@ module.exports = {
     },
 
     listarTodos: function (req, res) {
-        res.render('todosLosProductos', {
-            title: "Nuestros productos",
-            productos: dbProducto
-        });
+        db.Products.findAll()
+        .then(result => {
+            //res.send(result)/ //Descomentar esa linea para ver result y los datos que llegan.
+            res.render('todosLosProductos', { //renderizo en el navegador la vista index que contiene el HOME del sitio
+                productos:result,
+                user:req.session.user
+            })
+        })
+        .catch(error => {
+            console.log(error)
+        })
     },
 
     categorias: function (req, res) {
@@ -136,7 +143,7 @@ guardarEditar: function(req, res, next) {
     fs.writeFileSync(path.join(__dirname, "..", 'data', "products.json"), JSON.stringify(dbProducto), "utf-8")
     res.redirect('/productos')
 },
-delete: (req, res) => {
+/*delete: (req, res) => {
     let productodelete = req.params.id;
     let borrar;
     dbProducto.forEach((producto) => {
@@ -147,7 +154,26 @@ delete: (req, res) => {
     dbProducto.splice(borrar, 1)
     fs.writeFileSync(path.join(__dirname, "..", 'data', "products.json"), JSON.stringify(dbProducto), "utf-8")
     res.redirect('/productos')
+},*/
+delete: (req, res) => {
+    let productoborrar = req.params.id;
+    /* let borrar;
+    dbProducto.forEach((producto) => {
+        if (producto.id == productodelete) {
+            borrar = dbProducto.indexOf(producto)
+        }
+    })
+    dbProducto.splice(borrar, 1)
+    fs.writeFileSync(path.join(__dirname, '..', 'data', 'productosDataBase.json'), JSON.stringify(dbProducto), 'utf-8') */
+    db.Products.destroy({
+        where:{
+            id:req.params.id
+        }
+    })
+    res.redirect('/productos')
 },
+
+
 
     search: function(req, res) {
         let buscar = req.query.search;

@@ -33,9 +33,9 @@
             <% usuarios.forEach(usuario => { %>    
             <tr>
                 
-                <td><%- usuario.nombre %> </td>
+                 <td> <a href="/user/perfil"><%- usuario.nombre %></a> </td>
                 <td><%- usuario.apellido %></td>
-                <td><%- usuario.email %></td>
+                <td><%- usuario.email %></td> 
                 
                 
                 <td><form onclick="return confirm('Estas seguro que querés eliminaro el producto?')" action="/user/delete/<%= usuario.id %>?_method=delete" method="POST">

@@ -85,6 +85,13 @@ module.exports = {
         }
     },
 
+    perfil: function (req, res) {
+        res.render("perfil", {
+            title: "Mi perfil",
+            user: req.session.user //oct
+        });
+    },
+
 
     profile: function (req, res) {
         if (req.session.user) {
