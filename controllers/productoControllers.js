@@ -1,12 +1,13 @@
 
-const dbProducto = require('../data/database')
+const db = require("../database/models")
+//const dbProducto = require('../data/database')
 const fs = require('fs');
 const path = require('path');
-const db = require("../database/models")
+//const { rawListeners } = require('process');
 
 
 module.exports = {
-    listarAdmin: function (req, res) {
+    listarAdmin: function (req, res) { //vista admin
         db.Products.findAll()
         .then(result => {
 
@@ -21,47 +22,53 @@ module.exports = {
         })
     },
 
-    listarTodos: function (req, res) {
+    listarTodos: function (req, res) { //vista usuarios general
         db.Products.findAll()
         .then(result => {
-            //res.send(result)/ //Descomentar esa linea para ver result y los datos que llegan.
+            //res.send(result) //Descomentar esa linea para ver result y los datos que llegan.
             res.render('todosLosProductos', { //renderizo en el navegador la vista index que contiene el HOME del sitio
                 productos:result,
                 user:req.session.user
             })
         })
         .catch(error => {
-            console.log(error)
+            res.send(error)
         })
     },
 
     categorias: function (req, res) {
 
-        let cat = req.params.cat
+        let cat = req.params.cat;
 
-        let productos = dbProducto.filter(producto => {
-            return producto.category == cat
+        db.products.findOne({
+            where:{
+                id_categoria : cat
+            }
         })
-
+            
+            .then(result => {
+                
         res.render('categoria', {
             title: "WASSER",
-            productos: productos
+            user:req.session.user
+
         })
-    },
+    })
+
+  },
+
+  
 
 
     producto: function (req, res) { //detalle de producto
         let id = req.params.id;
-
-
          db.Products.findOne({
             where:{
                 id:id
             }
-
         })
         .then(resultado =>{
-            //res.send(resultado)// Descomentar linea para ver como llega producto
+            res.send(resultado)// Descomentar linea para ver como llega producto
             res.render("producto", {
                 id: id,
                 producto: resultado,
@@ -69,9 +76,12 @@ module.exports = {
             })
         })
     },
+    publicarpost: function (req, res, next) {//controlador vista
 
+        res.render("agregar")
+},
 
-    publicar: function (req, res, next) {
+    publicar: function (req, res, next) {//controlador post
 
         /*db.Products.findAll()
         .then (result =>{
@@ -89,7 +99,7 @@ module.exports = {
             .then(result => {
 
                 //console.log(req.files);
-                res.redirect("/")
+                res.redirect("/productos")
             })
             .catch(error => {
                 res.send(error)
@@ -104,10 +114,6 @@ module.exports = {
 
 
 
-    publicarpost: function (req, res, next) {
-
-        res.render("agregar")
-},
 
 
 
@@ -118,17 +124,32 @@ module.exports = {
 
 
 
-vistaEditar: function(req, res, next) {
+
+/*vistaEditar: function(req, res, next) {
     let idProducto = req.params.id;
 
     res.render('EditarProducto', {
         title: "Edicion de producto",
         idProducto: idProducto,
         dbProducto: dbProducto
-    })
+    })*/
+    vistaEditar: function (req, res, next) {
+        let idProducto = req.params.id;
+        db.Products.findAll()
+            .then(resultado => {
+                res.render('EditarProducto', {
+                    title: "Edicion de producto",
+                    idProducto: idProducto,
+                    dbProducts: resultado,
+                    user: req.session.user
+                })
+            })
+            .catch(error => {
+                console.log(error);
+        })
 
 },
-guardarEditar: function(req, res, next) {
+/*guardarEditar: function(req, res, next) {
     let idProducto = req.params.id;
     dbProducto.forEach(function (producto) {
         if (producto.id == idProducto) {
@@ -142,7 +163,40 @@ guardarEditar: function(req, res, next) {
     })
     fs.writeFileSync(path.join(__dirname, "..", 'data', "products.json"), JSON.stringify(dbProducto), "utf-8")
     res.redirect('/productos')
-},
+},*/
+guardarEditar: function (req, res, next) {
+    /*  let idProducto = req.params.id;
+     dbProducto.forEach(function (producto) {
+         if (producto.id == idProducto) {
+             producto.id = Number(idProducto);
+             producto.nombre = req.body.nombre;
+             producto.precio = Number(req.body.precio);
+             producto.descuento = Number(req.body.descuento);
+             producto.categoriaProducto = req.body.categoriaProducto;
+             producto.descripcion = req.body.descripcion;
+             producto.imagen = (req.files[0] ? req.files[0].filename : producto.imagen)
+         }
+     })
+     fs.writeFileSync(path.join(__dirname, '..', 'data', 'productosDataBase.json'), JSON.stringify(dbProducto), 'utf-8') */
+     db.Products.update({
+         nombre : req.body.nombre,
+         precio : Number(req.body.precio),
+         id_categoria : req.body.id_categoria,
+         descripcion : req.body.descripcion,
+         imagenes : (req.files[0] ? req.files[0].filename : req.session.user.imagen)
+     },{
+         where:{
+             id:req.params.id
+         }
+     })
+     .then(result=>{
+         res.redirect('/productos')
+     })
+     .catch(errores=>{
+         console.log(errores)
+     })
+     
+ },
 /*delete: (req, res) => {
     let productodelete = req.params.id;
     let borrar;
@@ -175,7 +229,7 @@ delete: (req, res) => {
 
 
 
-    search: function(req, res) {
+    /*search: function(req, res) {
         let buscar = req.query.search;
         let resultados = [];
         dbProducto.forEach(producto => {
@@ -187,6 +241,35 @@ delete: (req, res) => {
             title: "Resultado de la busqueda",
             productos: resultados
 
+        })
+    }*/
+    search: function (req, res) {
+        /* let buscar = req.query.buscar;
+        let resultados = [];
+        dbProducto.forEach(function (producto) {
+            if (producto.nombre.toLowerCase().includes(buscar.toLowerCase())) {
+                resultados.push(producto)
+            }
+        })
+        res.render('productos', {
+            title: "Resultados de la busqueda",
+            dbProducto: resultados,
+            user: req.session.user
+        }) */
+        
+        db.Products.findAll({
+            where:{
+                nombre:{
+                    [Op.substring]:req.query.buscar
+                }
+            }
+        })
+        .then(resultado=>{
+            res.render('resultados', {
+                title: "Resultados de la busqueda",
+                dbProducts: resultado,
+                user: req.session.user
+            })
         })
     }
 }

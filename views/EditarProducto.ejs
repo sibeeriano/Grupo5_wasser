@@ -15,27 +15,26 @@
        
     <div class="form-register2">
         <h4>Carga tu producto</h4>
-        <% dbProducto.forEach(producto => { %>
-            <% if (producto.id == idProducto) { %>
-          <form method="POST" action="/productos/EditarProducto/<%= producto.id %>?_method=PUT" enctype="multipart/form-data">
+        <% dbProducts.forEach(products => { %>
+            <% if (products.id == idProducto) { %>
+          <form method="POST" action="/productos/EditarProducto/<%= products.id %>?_method=PUT" enctype="multipart/form-data">
           
-        <input class="controlls2" type="" name="name"  placeholder="Nombre producto" value="<%= producto.name %> " required>
+        <input class="controlls2" type="" name="nombre"  placeholder="Nombre producto" value="<%= products.nombre %> " required>
 
-        <input class="controlls2" type="" name="colors" placeholder="Colors" value="<%= producto.colors %> " required>  
         
-        <input class="controlls2" type="" name="price" placeholder="$ Precio" value="<%= producto.price %> " required>      
+        <input class="controlls2" type="" name="precio" placeholder="$ Precio" value="<%= products.precio %> " required>      
         
         <label for="Categorias"></label>
-            <select name="category" class="controlls2">
-                <% if (producto.category == "baño") { %>                
+            <select name="id_category" class="controlls2">
+                <% if (products.id_categoria == "baño") { %>                
                 <option value="baño">Griferia Baño</option>
-                <% } else if (producto.category == "cocina") { %>
+                <% } else if (products.id_categoria == "cocina") { %>
                 <option value="cocina">Griferia Cocina</option>
-                <% } else if (producto.category == "bachas") { %>
+                <% } else if (products.id_categoria == "bachas") { %>
                 <option value="bachas">Bachas</option>
-                <% } else if (producto.category == "sanitarios") { %>
+                <% } else if (products.id_categoria == "sanitarios") { %>
                 <option value="sanitarios">Sanitarios</option>
-                <% } else if (producto.category == "bañeras") { %>
+                <% } else if (products.id_categoria == "bañeras") { %>
                 <option value="bañeras">Bañeras y Duchas</option>
                 <% } else { %>
                 <option value="accesorios">Accesorios Varios</option> 
@@ -48,13 +47,13 @@
                 <option value="accesorios">Accesorios Varios/option>
             </select>
         <h3>Agregue 1 imagen</h3>
-        <input class="controlls2"  type="file" name="image">
+        <input class="controlls2"  type="file" name="imagenes">
 
       </label>
         <label for="controlls2"></label>    
         <div class="botons">
           <label for="exampleFormControlTextarea1">Descripción</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"><%= producto.description %></textarea>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"><%= products.descripcion %></textarea>
       </div>
                    
       <div class="mt-5 mr-5 d-flex justify-content-center">

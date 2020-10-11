@@ -22,6 +22,7 @@
         
         <thead>
             <tr>
+                <th>id</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Email</th>
@@ -33,7 +34,8 @@
             <% usuarios.forEach(usuario => { %>    
             <tr>
                 
-                 <td> <a href="/user/perfil"><%- usuario.nombre %></a> </td>
+                <td><%- usuario.id %></td>
+                <td> <a href="/user/usuarios/<%usuario.id%>"> <%- usuario.nombre %></a> </td>
                 <td><%- usuario.apellido %></td>
                 <td><%- usuario.email %></td> 
                 

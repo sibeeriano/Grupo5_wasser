@@ -1,11 +1,13 @@
+const db = require("../database/models")
+
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const { validationResult, body } = require('express-validator');
-const db = require("../database/models")
+
 
 module.exports = {
-    login: function (req, res) {
+    login: function (req, res) { //INICIAR SESION
         res.render("iniciarsesion", {
             title: "Ingreso de Usuarios",
             user: req.session.user //oct
@@ -21,7 +23,8 @@ module.exports = {
                 }
             })
                 .then(user => {
-                    req.session.user = {
+                    
+                        req.session.user = {
                         id: user.id,
                         nick: user.nombre + " " + user.apellido,
                         email: user.email,
@@ -29,8 +32,11 @@ module.exports = {
                         rol: user.rol
                     }
                     if (req.body.recordar != undefined) { //agregado el !=undefined
-                        res.cookie('usuarioWasser', req.session.user, { maxAge: 30000 }) //30 segundos para ver que funcione
+                        res.cookie('usuarioWasser', req.session.user, { maxAge: 90000 })
                     }
+
+                    res.locals.user = req.session.user
+
                     return res.redirect('/')
                 })
         } else {
@@ -38,16 +44,16 @@ module.exports = {
                 title: "Ingreso de Usuario",
                 error: errors.mapped(),
                 old: req.body,
-                user: req.session.user //agregado octubre
+                user: req.session.user 
             })
         }
 
     },
 
     register: function (req, res) {
-      
-        res.render("registro", {
+            res.render("registro", {
             title: "Registro de Usuario",
+            user:req.session.user//
 
         })
     },
@@ -68,8 +74,6 @@ module.exports = {
             )
                 .then(result => {
                     console.log(result)
-                    
-
                     return res.redirect('/user/iniciarsesion');
                 })
                 .catch(errores => {
@@ -86,14 +90,20 @@ module.exports = {
     },
 
     perfil: function (req, res) {
-        res.render("perfil", {
+        let id = req.params.id;
+        db.Users.findOne({where:{
+            id:id
+        }}).then(resultado=>{
+            res.send(resultado)
+       /* res.render("perfil", {
             title: "Mi perfil",
-            user: req.session.user //oct
-        });
+            user: req.session.user oct*/
+        })
+    
     },
 
 
-    profile: function (req, res) {
+    /*profile: function (req, res) {
         if (req.session.user) {
             db.User.findByPk(req.session.user.id)
                 .then(user => {
@@ -131,16 +141,17 @@ module.exports = {
             .catch(errors => {
                 console.log(errors)
             })
-    },
+    },*/
 
     cerrarsesion: function (req, res) {
         req.session.destroy();
         if (req.cookies.usuarioWasser) {
             res.cookie('usuarioWasser', '', { maxAge: -1 });
         }
+        res.redirect('/')
     },
 
-       usuarios: function (req, res) {
+    usuarios: function (req, res) {
         db.User.findAll()
         .then(usuarios =>{
             res.render('usuarios', {

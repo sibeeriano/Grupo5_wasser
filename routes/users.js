@@ -1,31 +1,39 @@
+//M O D U L O S
 var express = require('express');
 var router = express.Router();
+//C O N T R O L A D O R E S 
 
-const multerAvatar = require('../middlewares/multerAvatar');
 const controller = require('../controllers/userControllers');
-let loginValidator = require("../validators/loginValidator");
-const registerValidator = require('../validators/registerValidator');
 
+
+//V A L I D A C I O N E S 
+const registerValidator = require('../validators/registerValidator');
+let loginValidator = require("../validators/loginValidator");
+
+//M I D D L E W A R E S
+const multerAvatar = require('../middlewares/multerAvatar');
+
+// R U T A S 
 router.get("/iniciarsesion", controller.login);
 router.post("/iniciarsesion", loginValidator, controller.processLogin);
 
 router.get("/registrarse", controller.register);
-router.post("/registrarse", multerAvatar.any(), registerValidator, controller.processRegister);
+router.post("/registrarse", multerAvatar.any(),registerValidator, controller.processRegister);
 
 
 router.get('/cerrarsesion', controller.cerrarsesion);
 
-router.get("/profile", controller.profile);
-router.put("/updateProfile/:id", multerAvatar.any(), controller.updateProfile);
+router.get("usuarios/:id", controller.perfil);
+//router.put("/updateProfile/:id", multerAvatar.any(), controller.updateProfile);
 
 
 router.get('/usuarios', controller.usuarios);//lista todos los usuarios
 router.delete('/delete/:id', controller.delete)//se borran mas rapido
 
-//el middlewares//
+/*
 router.get('/', function (req, res, next) {
   res.send('respond with a resource');
-});
+});*/
 
 
 module.exports = router;

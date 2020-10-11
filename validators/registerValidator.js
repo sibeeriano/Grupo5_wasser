@@ -47,9 +47,9 @@ module.exports = [
         }
         return true
     })
-    .withMessage('Las contraseñas no coinciden'),
+    .withMessage('Las contraseñas no coinciden'),/*
 
     check('bases')
     .isString('on')
-    .withMessage('Debe aceptar las bases y condiciones')
+    .withMessage('Debe aceptar las bases y condiciones')*/
 ]

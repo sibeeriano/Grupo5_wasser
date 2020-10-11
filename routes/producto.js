@@ -22,8 +22,8 @@ router.post('/agregar',multerProduct.any(),RecordarUser,controller.publicar);
 router.get('/EditarProducto/:id', RecordarUser,controller.vistaEditar)
 router.put('/EditarProducto/:id', multerProduct.any(), RecordarUser,controller.guardarEditar)//Actualizar
 
-router.get('/:cat?',controller.categorias);
-router.get('/:cat?/:id?',controller.producto);
+//router.get('/:cat?',controller.categorias);
+//router.get('/:cat/:id',controller.producto);
 
 
 router.delete('/delete/:id',RecordarUser, controller.delete)

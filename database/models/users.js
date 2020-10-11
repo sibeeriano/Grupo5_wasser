@@ -30,6 +30,9 @@ module.exports = (sequelize,dataTypes) => {
         },
         avatar : {
             type:dataTypes.STRING(45)
+        },
+        rol : {
+            type:dataTypes.STRING(45)
         }
         
       
