@@ -1,9 +1,10 @@
 
 const db = require("../database/models")
-    const dbProducto = require('../data/database')
+const dbProducto = require('../data/database')
 const fs = require('fs');
 const path = require('path');
 //const { rawListeners } = require('process');
+const { Op } = require("sequelize");
 
 
 module.exports = {
