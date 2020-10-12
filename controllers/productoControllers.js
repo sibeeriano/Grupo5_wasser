@@ -1,6 +1,6 @@
 
 const db = require("../database/models")
-//const dbProducto = require('../data/database')
+    const dbProducto = require('../data/database')
 const fs = require('fs');
 const path = require('path');
 //const { rawListeners } = require('process');
@@ -40,14 +40,14 @@ module.exports = {
 
         let cat = req.params.cat;
 
-        db.products.findOne({
+        db.Products.findOne({
             where:{
-                id_categoria : cat
+                id : cat
             }
         })
             
             .then(result => {
-                
+                res.send(result)
         res.render('categoria', {
             title: "WASSER",
             user:req.session.user
@@ -57,7 +57,7 @@ module.exports = {
 
   }, 
 
-
+//logica del producto
     producto: function (req, res) { //detalle de producto
         let id = req.params.id;
          db.Products.findOne({
@@ -66,14 +66,16 @@ module.exports = {
             }
         })
         .then(resultado =>{
-            res.send(resultado)// Descomentar linea para ver como llega producto
+           
             res.render("producto", {
                 id: id,
                 producto: resultado,
-                user:req.session.user
+                user:req.session.user,
+                productos: resultado
             })
         })
     },
+
     publicarpost: function (req, res, next) {//controlador vista
 
         res.render("agregar")
@@ -106,7 +108,18 @@ module.exports = {
 
 
     },
-    
+
+
+
+
+/*vistaEditar: function(req, res, next) {
+    let idProducto = req.params.id;
+
+    res.render('EditarProducto', {
+        title: "Edicion de producto",
+        idProducto: idProducto,
+        dbProducto: dbProducto
+    })*/
     vistaEditar: function (req, res, next) {
         let idProducto = req.params.id;
         db.Products.findAll()

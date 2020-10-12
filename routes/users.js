@@ -23,7 +23,7 @@ router.post("/registrarse", multerAvatar.any(),registerValidator, controller.pro
 
 router.get('/cerrarsesion', controller.cerrarsesion);
 
-router.get("usuarios/:id", controller.perfil);
+router.get('/perfil/:id', controller.perfil);
 //router.put("/updateProfile/:id", multerAvatar.any(), controller.updateProfile);
 
 

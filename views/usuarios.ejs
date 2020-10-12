@@ -36,14 +36,14 @@
             <tr>
                 
                 <td><%- usuario.id %></td>
-                <td> <a href="/user/<%usuario.id%>"> <%- usuario.nombre %></a> </td>
+                <td> <a href="perfil/<%= usuario.id %>" > <%- usuario.nombre %></a> </td>
                 <td><%- usuario.apellido %></td>
                 <td><%- usuario.email %></td> 
                 
                  
                 
                 
-                <td><form action="/user/<%usuario.id%>">
+                <td><form action="perfil/<%= usuario.id %>">
                     <button class="">Perfil</button>
                     </form></td>    
                     <td><form onclick="return confirm('Estas seguro que querés eliminaro el producto?')" action="/user/delete/<%= usuario.id %>?_method=delete" method="POST">

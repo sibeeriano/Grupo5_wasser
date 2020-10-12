@@ -37,8 +37,11 @@
                                                         <li><a href="/user/iniciarsesion">Ingresar</a></li>
                                                         <% }else{ %>
                                                         <li>Hola <%= (user)?user.nick:"." %></li>   
-                                                        <li><a href="/user/usuarios/ ">Mi Perfil</a></li>
-                                                        <li><a href="/user/cerrarsesion">Cerrar Sesion</a></li>                                                    
+                                                        <li><a href="user/perfil/<%= user.id %>">Mi Perfil</a></li> 
+                                                        <li><a href="/user/cerrarsesion">Cerrar Sesion</a></li> 
+                                                          
+                                                              
+
                                                         <% } %>
                                                     </ul>
                                                 </li>

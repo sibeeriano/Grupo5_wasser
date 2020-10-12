@@ -27,30 +27,25 @@
                 <th>Apellido</th>
                 <th>Email</th>
                 
-                <th>PERFIL</th>
-                <th>BAN</th>
+           
             </tr>
         </thead>
         <tbody>
-            <% usuarios.forEach(usuario => { %>    
+              
             <tr>
+                <td></td>
+                <td><%- nombre %></td> 
+                <td><%- apellido %></td>
+                <td><%- email %></td>
+                <td><%- fecha %></td> 
+
+                <td><%- avatar%></td> 
+                <td><%- rol %></td> 
+                               
                 
-                <td><%- usuario.id %></td>
-                <td> <a href="/user/<%usuario.id%>"> <%- usuario.nombre %></a> </td>
-                <td><%- usuario.apellido %></td>
-                <td><%- usuario.email %></td> 
                 
-                 
-                
-                
-                <td><form action="/user/<%usuario.id%>">
-                    <button class="">Perfil</button>
-                    </form></td>    
-                    <td><form onclick="return confirm('Estas seguro que querés eliminaro el producto?')" action="/user/delete/<%= usuario.id %>?_method=delete" method="POST">
-                        <button class="">Eliminar</button>
-                        </form></td>    
             </tr>
-            <% }) %>
+            
         </tbody>
         
             </table>

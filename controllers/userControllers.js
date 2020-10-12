@@ -26,13 +26,13 @@ module.exports = {
                     
                         req.session.user = {
                         id: user.id,
-                        nick: user.nombre ,
+                        nick: user.nombre,
                         email: user.email,
                         avatar: user.avatar,
                         rol: user.rol
                     }
                     if (req.body.recordar != undefined) { //agregado el !=undefined
-                        res.cookie('usuarioWasser', req.session.user, { maxAge: 90000 })
+                        res.cookie('usuarioWasser', req.session.user, { maxAge: 90000000000000 })
                     }
 
                     res.locals.user = req.session.user
@@ -89,18 +89,25 @@ module.exports = {
         }
     },
 
-    perfil: function (req, res) {
-        let id = req.params.id;
-        db.Users.findOne({where:{
-            id:id
-        }}).then(resultado=>{
-            res.send(resultado)
-       /* res.render("perfil", {
-            title: "Mi perfil",
-            user: req.session.user oct*/
+    perfil: function (req, res) { //haces la misma funcion por producto
+        let id = req.params.id;   //esto queda igual
+        db.User.findOne({where:{ //esto tambien
+            id:id                   //esto tambien  
+        }}).then(resultado=>{       //lo mismo
+            //res.send(resultado)   esto para ver si funciona lo de arriba
+        res.render("usuarioperfil", { //renderizas la vista
+        title: "Mi perfil",            //el titulo que igual hace lo que se le canta
+        user: resultado,            //aca proba product : resultado
+        nombre: resultado.nombre,     // nombre:resultado.nombre
+        apellido: resultado.apellido, // precio: resultado.precio y asi...
+        email:resultado.email,
+        fecha: resultado.created_at,
+        avatar: resultado.avatar,
+        rol: resultado.rol,
+        user: req.session.user     
         })
-    
-    
+        
+    })
     },
 
 
