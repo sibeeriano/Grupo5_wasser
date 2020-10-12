@@ -55,9 +55,7 @@ module.exports = {
         })
     })
 
-  },
-
-  
+  }, 
 
 
     producto: function (req, res) { //detalle de producto
@@ -108,31 +106,7 @@ module.exports = {
 
 
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*vistaEditar: function(req, res, next) {
-    let idProducto = req.params.id;
-
-    res.render('EditarProducto', {
-        title: "Edicion de producto",
-        idProducto: idProducto,
-        dbProducto: dbProducto
-    })*/
+    
     vistaEditar: function (req, res, next) {
         let idProducto = req.params.id;
         db.Products.findAll()
@@ -149,35 +123,9 @@ module.exports = {
         })
 
 },
-/*guardarEditar: function(req, res, next) {
-    let idProducto = req.params.id;
-    dbProducto.forEach(function (producto) {
-        if (producto.id == idProducto) {
-            producto.id = Number(idProducto);
-            producto.name = req.body.name;
-            producto.price = req.body.price;
-            producto.category = req.body.category;
-            producto.description = req.body.description;
-            producto.image = (req.files[0] ? req.files[0].filename : producto.imagen)
-        }
-    })
-    fs.writeFileSync(path.join(__dirname, "..", 'data', "products.json"), JSON.stringify(dbProducto), "utf-8")
-    res.redirect('/productos')
-},*/
+
 guardarEditar: function (req, res, next) {
-    /*  let idProducto = req.params.id;
-     dbProducto.forEach(function (producto) {
-         if (producto.id == idProducto) {
-             producto.id = Number(idProducto);
-             producto.nombre = req.body.nombre;
-             producto.precio = Number(req.body.precio);
-             producto.descuento = Number(req.body.descuento);
-             producto.categoriaProducto = req.body.categoriaProducto;
-             producto.descripcion = req.body.descripcion;
-             producto.imagen = (req.files[0] ? req.files[0].filename : producto.imagen)
-         }
-     })
-     fs.writeFileSync(path.join(__dirname, '..', 'data', 'productosDataBase.json'), JSON.stringify(dbProducto), 'utf-8') */
+    
      db.Products.update({
          nombre : req.body.nombre,
          precio : Number(req.body.precio),
@@ -197,28 +145,10 @@ guardarEditar: function (req, res, next) {
      })
      
  },
-/*delete: (req, res) => {
-    let productodelete = req.params.id;
-    let borrar;
-    dbProducto.forEach((producto) => {
-        if (producto.id == productodelete) {
-            borrar = dbProducto.indexOf(producto)
-        }
-    })
-    dbProducto.splice(borrar, 1)
-    fs.writeFileSync(path.join(__dirname, "..", 'data', "products.json"), JSON.stringify(dbProducto), "utf-8")
-    res.redirect('/productos')
-},*/
+
 delete: (req, res) => {
     let productoborrar = req.params.id;
-    /* let borrar;
-    dbProducto.forEach((producto) => {
-        if (producto.id == productodelete) {
-            borrar = dbProducto.indexOf(producto)
-        }
-    })
-    dbProducto.splice(borrar, 1)
-    fs.writeFileSync(path.join(__dirname, '..', 'data', 'productosDataBase.json'), JSON.stringify(dbProducto), 'utf-8') */
+    
     db.Products.destroy({
         where:{
             id:req.params.id
@@ -226,37 +156,9 @@ delete: (req, res) => {
     })
     res.redirect('/productos')
 },
-
-
-
-    /*search: function(req, res) {
-        let buscar = req.query.search;
-        let resultados = [];
-        dbProducto.forEach(producto => {
-            if (producto.name.toLowerCase().includes(buscar.toLowerCase())) {
-                resultados.push(producto)
-            }
-        })
-        res.render('resultados', {
-            title: "Resultado de la busqueda",
-            productos: resultados
-
-        })
-    }*/
+  
     search: function (req, res) {
-        /* let buscar = req.query.buscar;
-        let resultados = [];
-        dbProducto.forEach(function (producto) {
-            if (producto.nombre.toLowerCase().includes(buscar.toLowerCase())) {
-                resultados.push(producto)
-            }
-        })
-        res.render('productos', {
-            title: "Resultados de la busqueda",
-            dbProducto: resultados,
-            user: req.session.user
-        }) */
-        
+              
         db.Products.findAll({
             where:{
                 nombre:{

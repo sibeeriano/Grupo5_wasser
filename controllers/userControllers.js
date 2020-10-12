@@ -26,7 +26,7 @@ module.exports = {
                     
                         req.session.user = {
                         id: user.id,
-                        nick: user.nombre + " " + user.apellido,
+                        nick: user.nombre ,
                         email: user.email,
                         avatar: user.avatar,
                         rol: user.rol
@@ -99,6 +99,7 @@ module.exports = {
             title: "Mi perfil",
             user: req.session.user oct*/
         })
+    
     
     },
 
