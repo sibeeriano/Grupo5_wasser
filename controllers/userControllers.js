@@ -26,13 +26,13 @@ module.exports = {
                     
                         req.session.user = {
                         id: user.id,
-                        nick: user.nombre + " " + user.apellido,
+                        nick: user.nombre,
                         email: user.email,
                         avatar: user.avatar,
                         rol: user.rol
                     }
                     if (req.body.recordar != undefined) { //agregado el !=undefined
-                        res.cookie('usuarioWasser', req.session.user, { maxAge: 90000 })
+                        res.cookie('usuarioWasser', req.session.user, { maxAge: 90000000000000 })
                     }
 
                     res.locals.user = req.session.user
