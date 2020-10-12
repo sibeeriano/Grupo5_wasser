@@ -112,7 +112,7 @@ module.exports = {
     },
 
     
-    vistaEditar: function (req, res, next) {
+    vistaEditar: function (req, res, next) { //EDITAR USUARIO
         let iduser = req.params.id;      
         db.User.findAll()
             .then(resultado => {
@@ -128,7 +128,7 @@ module.exports = {
         })
     },
 
-    guardarEditar: function (req, res, next) {
+    guardarEditar: function (req, res, next) { //GUARDAR EDICION DE EDITAR USUARIO
        
         db.User.update(
             {
