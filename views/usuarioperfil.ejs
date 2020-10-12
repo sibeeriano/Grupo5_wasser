@@ -1,7 +1,6 @@
-!doctype html>
 <html class="no-js" lang="zxx">
 <head>   
-    <title>WASSER/Sign in</title>
+    <title>Wasser-<%- nombre %></title> 
     <%- include('./partials/head') %>     
 </head>    
 
@@ -14,10 +13,11 @@
 
 <main>
     <br>
-<h1>Listado de usuarios registrados</h1>
+<h1><%- nombre %>  <%- apellido %></h1>
+<h1><img src="/images/avatares/<%= avatar %>" class="img-responsive" style="width:50%" alt="Image"> </h1> 
 <br>
 
-  
+
     <table class="table table-responsive">
         
         <thead>
@@ -27,20 +27,28 @@
                 <th>Apellido</th>
                 <th>Email</th>
                 
+                
+                <th>Rol</th>
+                
+            
            
             </tr>
         </thead>
         <tbody>
               
             <tr>
-                <td></td>
+                <td><%- id %></td>
                 <td><%- nombre %></td> 
                 <td><%- apellido %></td>
                 <td><%- email %></td>
-                <td><%- fecha %></td> 
-
-                <td><%- avatar%></td> 
-                <td><%- rol %></td> 
+                <td><%- rol %></td>
+                <td><form action="/user/editarperfil/<%= id %>">
+                    <button class="">Editar Perfil</button>
+                    </form></td>    
+                
+                 
+               
+                 
                                
                 
                 
@@ -49,6 +57,7 @@
         </tbody>
         
             </table>
+        
     
 
 

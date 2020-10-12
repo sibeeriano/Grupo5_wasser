@@ -24,7 +24,8 @@ router.post("/registrarse", multerAvatar.any(),registerValidator, controller.pro
 router.get('/cerrarsesion', controller.cerrarsesion);
 
 router.get('/perfil/:id', controller.perfil);
-//router.put("/updateProfile/:id", multerAvatar.any(), controller.updateProfile);
+router.get('/editarperfil/:id', controller.vistaEditar)
+router.put("/updateProfile/:id", multerAvatar.any(), controller.guardarEditar);
 
 
 router.get('/usuarios', controller.usuarios);//lista todos los usuarios

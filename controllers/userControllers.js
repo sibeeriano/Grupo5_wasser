@@ -98,6 +98,7 @@ module.exports = {
         res.render("usuarioperfil", { //renderizas la vista
         title: "Mi perfil",            //el titulo que igual hace lo que se le canta
         user: resultado,            //aca proba product : resultado
+        id:resultado.id,
         nombre: resultado.nombre,     // nombre:resultado.nombre
         apellido: resultado.apellido, // precio: resultado.precio y asi...
         email:resultado.email,
@@ -110,25 +111,45 @@ module.exports = {
     })
     },
 
-
-    /*profile: function (req, res) {
-        if (req.session.user) {
-            db.User.findByPk(req.session.user.id)
-                .then(user => {
-                    res.render('profile', {
-                        title: "Perfil de Usuario",
-                        usuario: user,
-                        productos: dbProducts.filter(producto => {
-                            return producto.category != "visited" && producto.category != "in-sale"
-                        })
-
-                    })
+    
+    vistaEditar: function (req, res, next) {
+        let iduser = req.params.id;      
+        db.User.findAll()
+            .then(resultado => {
+                res.render('usuarioeditar', {
+                    title: "Edicion de perfil",
+                    idUser: idUser,
+                    dbUser: resultado,
+                    user: req.session.user
                 })
-        } else {
-            return res.redirect('/')
-        }
+            })
+            .catch(error => {
+                console.log(error);
+        })
     },
-    updateProfile: function (req, res) {
+
+    guardarEditar: function (req, res, next) {
+       
+        db.User.update(
+            {
+                nombre: req.body.nombre.trim(),
+                apellido: req.body.apellido.trim(),
+                email: req.body.email.trim(),
+                password: bcrypt.hashSync(req.body.password, 12 ),
+                avatar: (req.files[0]) ? req.files[0].filename : "default.png",
+                rol: "user"
+            }
+        )
+            .then(result => {
+                console.log(result)
+                return res.redirect('/user/iniciarsesion');
+            })
+            .catch(errores => {
+                console.log(errores)
+            })
+    },
+    
+    /*guardarEditar: function (req, res) {
         db.Users.update(
             {
                 fecha: req.body.fecha,

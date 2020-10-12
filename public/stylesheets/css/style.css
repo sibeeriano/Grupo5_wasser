@@ -33,6 +33,12 @@
   background: #ffffff;
 }
 
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+  align-content: center;
+}
 
 /* line 36, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_color.scss */
 .gray-bg {
