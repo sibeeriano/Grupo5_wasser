@@ -113,8 +113,11 @@ module.exports = {
 
     
     vistaEditar: function (req, res, next) { //EDITAR USUARIO
-        let iduser = req.params.id;      
-        db.User.findAll()
+        let idUser = req.params.id;      
+        db.User.findOne({where:
+        {
+            id:idUser
+        }})
             .then(resultado => {
                 res.render('usuarioeditar', {
                     title: "Edicion de perfil",
@@ -134,11 +137,12 @@ module.exports = {
             {
                 nombre: req.body.nombre.trim(),
                 apellido: req.body.apellido.trim(),
-                email: req.body.email.trim(),
-                password: bcrypt.hashSync(req.body.password, 12 ),
-                avatar: (req.files[0]) ? req.files[0].filename : "default.png",
-                rol: "user"
-            }
+                avatar: (req.files[0]) ? req.files[0].filename : "default.png"
+               
+            },
+            {where:{
+                  id: req.params.id
+            }},
         )
             .then(result => {
                 console.log(result)
@@ -148,29 +152,6 @@ module.exports = {
                 console.log(errores)
             })
     },
-    
-    /*guardarEditar: function (req, res) {
-        db.Users.update(
-            {
-                fecha: req.body.fecha,
-                avatar: (req.files[0]) ? req.files[0].filename : req.session.user.avatar,
-
-            },
-            {
-                where: {
-                    id: req.params.id
-                }
-            }
-
-        )
-            .then(result => {
-                console.log(result)
-                return res.redirect('/users/profile')
-            })
-            .catch(errors => {
-                console.log(errors)
-            })
-    },*/
 
     cerrarsesion: function (req, res) {
         req.session.destroy();

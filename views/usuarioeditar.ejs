@@ -14,7 +14,7 @@
 
 <main>
   
-  <form action="/user/registrarse" method="POST" enctype="multipart/form-data">
+  <form action="/user/updateProfile/<%= idUser %>" method="POST" enctype="multipart/form-data">
   <section class="form-register2">
     <h4>Actualizacion de Perfil</h4>
         
@@ -34,30 +34,7 @@
       <small class="text-danger"><%= (typeof errors != 'undefined' && errors.apellido)?errors.apellido.msg: "" %> </small>
     </div>
 
-    <div>
-      <label for="email"></label>
-      <input type="email"
-      class="controlls2 <%= (typeof old != 'undefined' && old.email && !errors.email)?"is-valid":(typeof errors != 'undefined' && errors.email)?"is-invalid": ""  %>"
-      id="email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" placeholder="Email" name="email"/>
-      <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
-    </div>
-   
-      
-    <div>
-      <label for="pass"></label>
-      <input type="password"
-      class="controlls2 <%= (typeof errors != 'undefined' && errors.password)?"is-invalid": ""  %>"
-      id="password" placeholder="Contraseña" name="password"/>
-      <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
-    </div>
- 
-    <div>
-      <label for="pass2"></label>
-      <input type="password"
-      class="controlls2 <%= (typeof errors != 'undefined' && errors.password2)?"is-invalid": ""  %>"
-      id="password2" placeholder="Reingresar contraseña" name="password2"/>
-      <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password2)?errors.password2.msg: "" %> </small>
-    
+
       
     <div class="form-group col-12 ">
         <div class="custom-file mt-4">

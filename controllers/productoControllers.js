@@ -40,14 +40,14 @@ module.exports = {
 
         let cat = req.params.cat;
 
-        db.Products.findOne({
+        db.Products.findAll({
             where:{
                 id : cat
             }
         })
             
             .then(result => {
-                res.send(result)
+                //res.send(result)
         res.render('categoria', {
             title: "WASSER",
             user:req.session.user
@@ -71,7 +71,6 @@ module.exports = {
                 id: id,
                 producto: resultado,
                 user:req.session.user,
-                productos: resultado
             })
         })
     },
