@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>   
-    <title>WASSER/Sign in</title>
+    <title>Usuarios/Admin</title>
     <%- include('./partials/head') %>     
 </head>    
 
@@ -26,7 +26,8 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Email</th>
-                
+                <th>Rol</th>
+                <th>Avatar</th>
                 <th>PERFIL</th>
                 <th>BAN</th>
             </tr>
@@ -39,7 +40,9 @@
                 <td> <a href="perfil/<%= usuario.id %>" > <%- usuario.nombre %></a> </td>
                 <td><%- usuario.apellido %></td>
                 <td><%- usuario.email %></td> 
-                
+                <td><%- usuario.rol %></td> 
+                <td><img src="/images/avatares/<%= usuario.avatar %>" class="img-responsive" style="width:10%" alt="Image"></td>
+              
                  
                 
                 

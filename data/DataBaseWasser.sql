@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 5.6.23, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: wasser
+-- Host: localhost    Database: wasser
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.4.14-MariaDB
 
@@ -89,7 +89,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `id_categorias_idx` (`id_categoria`),
   CONSTRAINT `id_categorias` FOREIGN KEY (`id_categoria`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'asd','13','asd',NULL,NULL,NULL,NULL),(2,'asd','18000','',NULL,'2020-10-10 16:39:55.000000','2020-10-10 16:39:55.000000',NULL),(3,'uriel','18000','','imagenes1602348079749.jpg','2020-10-10 16:41:19.000000','2020-10-10 16:41:19.000000',NULL);
+INSERT INTO `products` VALUES (1,'Canilla Grifería Lavatorio Baño Temporizada  ','2007','GRIFERIA LAVATORIO - Modelo: Grifería Temporizada Pressmatic - Color: Cromo - Material volante: Metálico - Material del pico: Metálico - Material cuadro : Metálico - Incluye flexibles: no - Incluye desagote: no - Tipo de pico: Fijo - Tipo de lluvia con aireador - Tiempo de cierre de agua: (ver manua','imagenes1602561971947.png',NULL,'2020-10-13 04:06:11.000000',1),(4,'Griferia Canilla Monocomando','0','CARACTERÍSTICAS DEL PRODUCTO: Griferia Canilla Monocomando Lavatorio De Baño - Mezcladora De Agua Fría Caliente. - Material: Metal Con Terminación De Excelente Cromado - Ideal Para Lavatorio De Baño. - Pico Fijo. - Aireador Espumante ( Evita Salpicar El Agua) ( Y Ahorra El Consumo De Agua) - Cartuch','imagenes1602562572607.png','2020-10-13 04:16:12.000000','2020-10-13 04:16:12.000000',NULL),(5,'Grifería Monocomando Fv Coty P/ Lavatorio Alt','15630','GRIFERIA FV COTY 0181.02/D9 MONOCOMANDO LAVATORIO ALTO - Colores disponibles: Cromo. - Tecnología: Cierre cerámico. - Garantía: 5 años - Tipo de instalación: Apto para calefón y/o termotanque. - Flexibles - Elemento de fijaciones - Instrucciones de instalación','imagenes1602562736658.png','2020-10-13 04:18:56.000000','2020-10-13 04:18:56.000000',NULL),(6,'Grifería Lavatorio Monocomando Alta','2860','Grifería lavatorio monocomando - Color negra - Material ABS -Altura total 28 cm -Altura hasta el pico 22 cm -Cartucho cierre cerámico 40 mm Incluye flexibles Conexión de bronce','imagenes1602563866172.png','2020-10-13 04:37:46.000000','2020-10-13 04:37:46.000000',NULL),(7,'Grifo de cocina monocomando Piazza Emblem cro','3620','- Marca: Piazza - Modelo: Emblem (ex - Yvon) - Color: Cromo - Material volante: Metálico - Material del pico: Metálico - Material cuadro: Latón - Tipo de cartucho: Ø 40 mm - Excelente Cromado - Mecanismo Metálico - Presión Mínima: 0,4 kg/cm2 - Tipo de cierre: Monocomando - Pico basculante con filtro','imagenes1602564456805.png','2020-10-13 04:46:44.000000','2020-10-13 04:47:36.000000',NULL),(8,'Grifo de cocina monocomando Piazza Emblem cro','17100','','imagenes1602564584044.png','2020-10-13 04:49:44.000000','2020-10-13 04:49:44.000000',NULL),(9,'Grifo de cocina monocomando FV Swing','17000','Diseño de vanguardia, funcional y práctico El control monocomando es un sistema moderno, durable y de fácil instalación. Te permite accionar la apertura y el cierre del caudal con una sola mano. Flexible y giratorio Su giro de 360ª hace que puedas ajustar la dirección y el ángulo del grifo. Es ideal','imagenes1602565992593.png','2020-10-13 05:13:12.000000','2020-10-13 05:13:12.000000',NULL),(10,'Grifo de cocina monocomando Hydros','299','\r\nGrifo de cocina monocomando Hydros\r\n$2.990,00\r\nColor: \r\nSeleccione un color\r\nDiseño de vanguardia, funcional y práctico El control monocomando es un sistema moderno, durable y de fácil instalación. Te permite accionar la apertura y el cierre del caudal con una sola mano. Flexible y giratorio Su gi','imagenes1602570348627.png','2020-10-13 06:25:48.000000','2020-10-13 06:25:48.000000',NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,7 +122,7 @@ CREATE TABLE `users` (
   `rol` varchar(45) COLLATE latin1_spanish_ci DEFAULT 'user',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,13 +131,9 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'santiago','pio','santiago@hotmail.com','$2b$12$aT3In9U0H5y1EQ6fyC/EE.Zi93QakvxPsF7yj785w0DaHBkANFy9y',NULL,'avatar1602187401736.jpg','2020-10-08 20:03:22.000000','2020-10-08 20:03:22.000000','user'),(3,'uriel','turrion','natalia@hotmail.com','$2b$12$e5ScI5nKp4QdekrLD2rl0OGbvZHuj4mUScWbIj.x03Gd/uyggR1P2',NULL,'avatar1602206029140.jpg','2020-10-09 01:13:49.000000','2020-10-09 01:13:49.000000','user'),(4,'natali','natalia','vampi@hotmail.com','$2b$12$msQc7jDTiIK6sQWkH9R9euA5vDyFpHhzegmbI71mjlhc056sqVEoe',NULL,'avatar1602206128469.jpg','2020-10-09 01:15:28.000000','2020-10-09 01:15:28.000000','user'),(5,'mauro','turrion','mauroagustinturrion@hotmail.com','$2b$12$/vZARNYaJ6jMr6ri1tGOae3JW4/9ic81LRzkuS1ZB6kTTXmq9QWx.',NULL,'avatar1602259319160.jpg','2020-10-09 16:01:59.000000','2020-10-09 16:01:59.000000','user'),(7,'mariana','miño','mariana.garcia@hotmail.com','$2b$12$p1Chv1xQg5PVXqg3/5ymx.wMgESdENsd/ftZkB8LXmM7S5vn5p/Fi',NULL,'avatar1602265860205.jpg','2020-10-09 17:51:00.000000','2020-10-09 17:51:00.000000','user'),(8,'junior','nicolas','nicolas@gmail.com','$2b$12$zKbn0uFQlpJO7ih.K3ig5eLf2ZcfHRqynmnhEOPX5xS1hTCSLL3Ru',NULL,'avatar1602267311098.jpg','2020-10-09 18:15:11.000000','2020-10-09 18:15:11.000000','user'),(9,'alan','sauce','alan@gmail.com','$2b$12$O6abUeIyXa/y9WLhAa1v2etbhf8Kt.HejYUwoe1LbvTLGoDme5dqy',NULL,'avatar1602343529459.jpg','2020-10-10 15:25:30.000000','2020-10-10 15:25:30.000000','user'),(10,'uriel','turrion','lean@hotmail.com','$2b$12$1ZcKJ2gPoDID7DITITqi8e1UGV8BcFh0Njf7u18DY3bjzM645/14.',NULL,'avatar1602381629533.jpg','2020-10-11 02:00:30.000000','2020-10-11 02:00:30.000000','user'),(11,'facundo','vara','facu@hotmail.com','$2b$12$/G70F/MDxdiG2q82zkG.buOpcEYG/ITNoRjsPPtDmqYEGBt26WrdG',NULL,'avatar1602381709779.jpg','2020-10-11 02:01:50.000000','2020-10-11 02:01:50.000000','user');
+INSERT INTO `users` VALUES (1,'Leandro','Bucco','mauroagustinturrion@hotmail.com','$2b$12$/vZARNYaJ6jMr6ri1tGOae3JW4/9ic81LRzkuS1ZB6kTTXmq9QWx.',NULL,'avatar1602570001201.jpg','2020-10-09 16:01:59.000000','2020-10-13 06:20:01.000000','user'),(2,'Lean','Turrion','lean@hotmail.com','$2b$12$1ZcKJ2gPoDID7DITITqi8e1UGV8BcFh0Njf7u18DY3bjzM645/14.',NULL,'avatar1602570074043.jpeg','2020-10-11 02:00:30.000000','2020-10-13 06:21:14.000000','admin'),(3,'Facu','Vara','facu@hotmail.com','$2b$12$/G70F/MDxdiG2q82zkG.buOpcEYG/ITNoRjsPPtDmqYEGBt26WrdG',NULL,'avatar1602569404811.png','2020-10-11 02:01:50.000000','2020-10-13 06:10:04.000000','admin'),(4,'Pio','Clusellas','Pio@adminWasser.com','$2b$12$6VJmSez0Tn0yltwCMvscheSBXX2AqmbcJVLDr3c8oqsHC54dE5mIa',NULL,'avatar1602568163042.jpg','2020-10-13 04:00:03.000000','2020-10-13 05:49:23.000000','admin'),(5,'Eric','Mena','eric@adminwasser.com','$2b$12$wAPijYQPI6FeB/7sjVK0y.U7vTQoz2uMhcPpQfeSeKoa4M.MheO.6',NULL,'avatar1602568980737.jpg','2020-10-13 06:03:01.000000','2020-10-13 06:03:01.000000','admin');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping routines for database 'wasser'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -148,4 +144,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-10 23:09:16
+-- Dump completed on 2020-10-13  8:32:08

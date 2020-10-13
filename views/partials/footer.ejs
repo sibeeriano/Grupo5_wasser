@@ -9,8 +9,16 @@
       </div>
      
       <div class="container">
-        <p class="pull-left copyright"> <a href="/productos">VISTA DE ADMINISTRADOR</a></li></p>
-   
+        <p class="pull-left copyright"> 
+          <% if (typeof user == "undefined") { %>
+                    
+          <li><a href="/user/iniciarsesion">Ingresar</a></li>
+          <% }else{ %>
+          <li>Regresa pronto <%= (user)?user.nick:"." %>!</li>   
+          
+          <li><a href="/user/cerrarsesion">Cerrar Sesion</a></li> </li></p>
+          <% } %>
+          <br>
     </div>
   <!--/.footer-bottom--> 
 

@@ -14,7 +14,7 @@
 <main>  
        
     <div class="form-register2">
-        <h4>Carga tu producto</h4>
+        <h4>Editar producto (Admin)</h4>
         <% dbProducts.forEach(products => { %>
             <% if (products.id == idProducto) { %>
           <form method="POST" action="/productos/EditarProducto/<%= products.id %>?_method=PUT" enctype="multipart/form-data">
@@ -22,7 +22,7 @@
         <input class="controlls2" type="" name="nombre"  placeholder="Nombre producto" value="<%= products.nombre %> " required>
 
         
-        <input class="controlls2" type="" name="precio" placeholder="$ Precio" value="<%= products.precio %> " required>      
+        <input class="controlls2" type="" name="precio" placeholder="Precio" value="<%= products.precio %> " required>      
         
         <label for="Categorias"></label>
             <select name="id_category" class="controlls2">
@@ -47,7 +47,7 @@
                 <option value="accesorios">Accesorios Varios/option>
             </select>
         <h3>Agregue 1 imagen</h3>
-        <input class="controlls2"  type="file" name="imagenes">
+        <input class="controlls2"  type="file" name="imagenes" value="<%= products.imagenes %> ">
 
       </label>
         <label for="controlls2"></label>    

@@ -22,7 +22,7 @@
                             
                            
                          
-                            <div class="col-xl-9 col-lg-8">
+                            <div class="col-xl-10 col-lg-10">
                                 <div class="menu-wrapper  d-flex align-items-center">
                                     <!-- Main-menu -->
                                     <div class="main-menu d-none d-lg-block">
@@ -90,7 +90,17 @@
                                                             <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
                                                         </form>
                                                     </a></li>
+                                               <li><li><% if (typeof user == "undefined") { %>
+                                                <li><a href="/user/iniciarsesion">Bienvenido!</a></li>
                                                
+                                                <% }else{ %>
+                                                <li></li><a href="user/perfil/<%= user.id %>">Hola <%= (user)?user.nick:"!" %>   <img src="/images/avatares/<%= user.avatar %>" class="img-responsive" style="width:5%" alt="Image"> </a></li>   
+                                                
+                                                 
+                                                  
+                                                      
+
+                                                <% } %></li>  </li>
                                                    </li> 
                                                    
                                                 

@@ -1,4 +1,4 @@
-const db = require("../database/models")
+let db = require("../database/models")
 
 const fs = require('fs');
 const path = require('path');
@@ -10,7 +10,7 @@ module.exports = {
     login: function (req, res) { //INICIAR SESION
         res.render("iniciarsesion", {
             title: "Ingreso de Usuarios",
-            user: req.session.user //oct
+            user: req.session.user 
         });
     },
 
@@ -23,16 +23,16 @@ module.exports = {
                 }
             })
                 .then(user => {
-                    
                         req.session.user = {
                         id: user.id,
                         nick: user.nombre,
                         email: user.email,
                         avatar: user.avatar,
                         rol: user.rol
+                        
                     }
                     if (req.body.recordar != undefined) { //agregado el !=undefined
-                        res.cookie('usuarioWasser', req.session.user, { maxAge: 90000000000000 })
+                      res.cookie('usuarioWasser', req.session.user, {maxAge:10})
                     }
 
                     res.locals.user = req.session.user
@@ -53,7 +53,8 @@ module.exports = {
     register: function (req, res) {
             res.render("registro", {
             title: "Registro de Usuario",
-            user:req.session.user//
+            user:req.session.user,
+            //
 
         })
     },
@@ -89,18 +90,18 @@ module.exports = {
         }
     },
 
-    perfil: function (req, res) { //haces la misma funcion por producto
-        let id = req.params.id;   //esto queda igual
-        db.User.findOne({where:{ //esto tambien
-            id:id                   //esto tambien  
-        }}).then(resultado=>{       //lo mismo
-            //res.send(resultado)   esto para ver si funciona lo de arriba
-        res.render("usuarioperfil", { //renderizas la vista
-        title: "Mi perfil",            //el titulo que igual hace lo que se le canta
-        user: resultado,            //aca proba product : resultado
+    perfil: function (req, res) {
+        let id = req.params.id;   
+        db.User.findOne({where:{ 
+            id:id                     
+        }}).then(resultado=>{       
+            //res.send(resultado)   
+        res.render("usuarioperfil", { 
+        title: "Mi perfil",            
+        user: resultado,            
         id:resultado.id,
-        nombre: resultado.nombre,     // nombre:resultado.nombre
-        apellido: resultado.apellido, // precio: resultado.precio y asi...
+        nombre: resultado.nombre,     
+        apellido: resultado.apellido, 
         email:resultado.email,
         fecha: resultado.created_at,
         avatar: resultado.avatar,
@@ -123,7 +124,8 @@ module.exports = {
                     title: "Edicion de perfil",
                     idUser: idUser,
                     dbUser: resultado,
-                    user: req.session.user
+                    user: req.session.user,
+                    
                 })
             })
             .catch(error => {
@@ -185,7 +187,7 @@ module.exports = {
                 id:req.params.id
             }
         })
-        return res.redirect('/')
+        return res.redirect('/user/usuarios')
     }
 }
 
