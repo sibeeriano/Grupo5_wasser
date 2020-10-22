@@ -1,0 +1,59 @@
+<!doctype html>
+<html class="no-js" lang="ES">
+<head>
+     <title>WASSER/Log in</title>
+     <%- include('./partials/head') %>     
+    </head>    
+    
+    <body>
+      <%- include('./partials/preloader') %>
+    
+    <header>
+      <%- include('./partials/header') %>
+    </header>
+
+    <main>
+    
+    <article class="form-register2">
+      
+ 
+        
+        <a > <h4>Iniciar Sesión</h4></a>
+            <div id= "errors"></div>  <!--lo agrega pio para mostrar los errores del front validation-->
+      <form id="loginForm" action="" method="POST" > 
+        <input class="controlls2" type="email" name="email" id="email" aria-describedby="emailHelp" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" placeholder="Ingrese su Correo" >
+        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
+        <input class="controlls2" type="password" name="password" id="password" placeholder="Ingrese su Contraseña" required>   
+        <small class="text-danger"><%= //(typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
+
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" name="recordar"><span></span>
+                    <label class="form-check-label" for="exampleCheck1" style="margin-top: 10px;">Recordarme</label>
+        </div>
+
+
+        <section class="form-register">
+            
+           <input href="/" class="botons" type="submit" value="Iniciar Sesión">
+             <p><a href="/recuperar">Olvide mi contraseñá</a></p>
+        
+            </form>
+            
+        </article>
+  
+    </main>
+
+    <footer>
+        <%- include('./partials/footer') %>
+    </footer>           
+        <%- include('./partials/scripts') %>  
+    </body>
+    </html>
+      
+     
+
+
+                            
+    
+
+    

@@ -16,7 +16,7 @@ window.onload = function(){
             errores.push('El email es incorrecto')
         }
         //que la contraseña tenga como minimo 6 y maximo 12 igual que en el back
-        if(!inputPass.value.lenght < 6 || inputPass.value.lenght > 12){ //si el lenght de la pss es menor a 6 o mayor a 12 entra al error
+        if(!inputPass.value.lenght > 6 || inputPass.value.lenght < 12){ //si el lenght de la pss es menor a 6 o mayor a 12 entra al error
         errores.push('La contraseña tiene que tener entre 6 y 12 caracteres')
         }
 
@@ -31,7 +31,7 @@ window.onload = function(){
         let errores = loginValidator()  
     
         if (errores.lenght==0){  //si errores es igual a 0 
-            loginForm.onsubmit() //se envia el formulario 
+            loginForm.submit() //se envia el formulario 
         }else {//sino pio primero creo un div en el form para que se muestren los errores con la siguiente logica:
             errores.forEach(error => {
                 divErrors.innerHTML += `<div class="alert alert-danger" role ="alert"> ${error}</div>`
