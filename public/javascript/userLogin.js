@@ -17,7 +17,7 @@ window.onload = function(){
         }
         //que la contraseña tenga como minimo 6 y maximo 12 igual que en el back
         if(!inputPass.value.lenght < 6 || inputPass.value.lenght > 12){ //si el lenght de la pss es menor a 6 o mayor a 12 entra al error
-        errores.push('La contraseña tiene que tener entre 6 y 12 caractaeres')
+        errores.push('La contraseña tiene que tener entre 6 y 12 caracteres')
         }
 
         return errores //esta funcion devuelve los errores si los hay
