@@ -23,7 +23,7 @@ window.onload = function(){
         return errores //esta funcion devuelve los errores si los hay
     }
  
-    loginForm.onsubmit = (e)=>{//con esto quer emos evitar que se de la accion por defecto que es que se envie el formulario de una, para evitar esto le damos un parametro llamado "e"
+    loginForm.submit = (e)=>{//con esto quer emos evitar que se de la accion por defecto que es que se envie el formulario de una, para evitar esto le damos un parametro llamado "e"
         e.preventDefault() //con esto no se envia el formulario, no pasa nada
         
         divErrors.innerHTML ="" //con esto no se acumulan los errores en la vista!
