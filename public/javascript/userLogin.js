@@ -1,37 +1,36 @@
-window.addEventListener('load',function(){
-    let loginForm = document.getElementById('loginForm')
-    let inputEmail = document.getElementById('email')
-    let inputPass = document.getElementById('password')
-    let regexEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
+window.onload = function(){
+    let formulario = document.getElementById("loginForm")
+    let usuario = document.getElementById("email")
+    let pass = document.getElementById("password")
+    
+    let regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
 
-
-    function loginValitor(){
-        let errores = []
-
-        if(!regexEmail.test(inputEmail.value)){
-            errores.push('Debes ingresar un email valido')
-        }
-        if(!inputPass.value.length < 0){
-            errores.push('Debes ingresar una contraseña')
-        }
-
-        return errores
-
-    }
-
-    loginForm.onsubmit = (e) =>{
-        e.preventDefault()
-
-        let errores = loginValitor()
-
-        if(errores.length > 0){
-
+    function loginValidator(){
+        let errores=[];
+        if(!regexEmail.test(usuario.value)){
+            usuario.classList.toggle('is-invalid')
+           //aca pongan las clases al input
+            errores.push("El email que ingresaste ta pal ogt")
         }else{
-            loginForm.submit()
+            //aca opnen clases que el input esta bien
         }
-
+        if(pass.value.length <6 || pass.value.length >12){
+            console.log("esto ta mal la contraseña boludo")
+           //aca van las clases al input
+            errores.push("El pass que ingresaste ta pal ogt")
+        }
+        console.log(errores)
+        return errores
     }
+     
 
 
-})
+    formulario.onsubmit = (e)=>{
+        e.preventDefault()
+        let errores = loginValidator()
+        if(!errores.length > 0){
+            formulario.submit()
+        }
+    }
+}
