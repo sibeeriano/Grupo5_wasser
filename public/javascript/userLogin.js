@@ -1,9 +1,9 @@
 window.onload = function(){
-    let formulario = document.getElementById("loginForm")
-    let usuario = document.getElementById("email")
-    let pass = document.getElementById("password")
-    
-    let regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    let formulario = qs("loginForm")
+    let usuario = qs("email")
+    let pass = qs("password")
+
+    let regexEmail = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)$/
 
 
     function loginValidator(){
@@ -11,19 +11,19 @@ window.onload = function(){
         if(!regexEmail.test(usuario.value)){
             usuario.classList.toggle('is-invalid')
            //aca pongan las clases al input
-            errores.push("El email que ingresaste ta pal ogt")
+            errores.push("Email mal")
         }else{
             //aca opnen clases que el input esta bien
         }
         if(pass.value.length <6 || pass.value.length >12){
-            console.log("esto ta mal la contraseña boludo")
+            console.log("esto ta mal la contraseña ")
            //aca van las clases al input
-            errores.push("El pass que ingresaste ta pal ogt")
+            errores.push("El pass ")
         }
         console.log(errores)
         return errores
     }
-     
+
 
 
     formulario.onsubmit = (e)=>{
