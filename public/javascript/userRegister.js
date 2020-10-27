@@ -156,19 +156,7 @@ window.addEventListener('load',function(){
             errorFoto.innerHTML = "";
     })
 
-    textComentario.addEventListener('blur',function(){
-        switch (true) {
-            case this.value == "":
-                errores.comentario = "Este campo es obligatorio"
-                errorComentario.innerHTML = errores.comentario;
-                this.classList.add('is-invalid')
-            break
-            default:
-            this.classList.remove('is-invalid');
-            this.classList.add('is-valid');
-            errorComentario.innerHTML = "";
-        }
-    })
+    
 
     formulario.addEventListener('submit',function(event){
         let error = false
