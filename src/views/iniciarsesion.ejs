@@ -26,7 +26,7 @@
                 
         <input class="controlls2" type="text" name="email" id="email" aria-describedby="emailHelp" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" placeholder="Ingrese su Correo" >
         <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
-        <span id="errorEmail" class="text-danger"></span>
+       
 
         <input class="controlls2" type="password" name="password" id="password" placeholder="Ingrese su Contraseña" >   
         <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
@@ -35,18 +35,24 @@
         <div class="form-group form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1" name="recordar">          
           <label class="form-check-label" for="exampleCheck1" style="margin-top: 10px;">Recordarme</label>
-          <span id="errorPass" class="text-danger"></span>
+      
         </div>
 
 
         <section class="form-register">
-          <span id="msgError" class="text-danger"></span>
+          
         <button type="submit">Iniciar</button>
 
            <p><a href="/recuperar">Olvide mi contraseñá</a></p>
         
             </form>
+            <span id="errorEmail" class="text-danger"></span>
+            <br>
+            <span id="errorPass" class="text-danger"></span>
+            <br>
+            <span id="msgError" class="text-danger"></span>
             
+        
           </article>
   
     </main>

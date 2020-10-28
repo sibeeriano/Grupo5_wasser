@@ -21,6 +21,11 @@ window.addEventListener('load',function(){
                 errores.email = "El campo email es obligatorio"
                 errorEmail.innerHTML = errores.email;
                 this.classList.add('is-invalid')
+            break
+            case !regExEmail.test(this.value):
+                errores.email = "Debes escribir un email válido"
+                errorEmail.innerHTML = errores.email;
+                this.classList.add('is-invalid')
             break;
             default:
             this.classList.remove('is-invalid');
