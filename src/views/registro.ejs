@@ -14,7 +14,7 @@
 
 <main>
   
-  <form id='formRegister' action="/user/registrarse" method="POST" enctype="multipart/form-data">
+  <form id="form" action="/user/registrarse" method="POST" enctype="multipart/form-data">
   <section class="form-register2">
     <h4>Formulario de registro</h4>
     <div id= "errors"></div> <!--Para mostrar los errores de validacion del front-->
@@ -44,7 +44,7 @@
    
       
     <div>
-      <label for="pass"></label>
+      <label for="password"></label>
       <input type="password"
       class="controlls2 <%= (typeof errors != 'undefined' && errors.password)?"is-invalid": ""  %>"
       id="password" placeholder="Contraseña" name="password"/>
@@ -52,7 +52,7 @@
     </div>
  
     <div>
-      <label for="pass2"></label>
+      <label for="password2"></label>
       <input type="password"
       class="controlls2 <%= (typeof errors != 'undefined' && errors.password2)?"is-invalid": ""  %>"
       id="password2" placeholder="Reingresar contraseña" name="password2"/>
