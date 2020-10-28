@@ -159,8 +159,9 @@ module.exports = {
         .then(resultado=>{
             res.render('resultados', {
                 title: "Resultados de la busqueda",
-                dbProducts: resultado,
+                products: resultado,
                 user: req.session.user
+                
             })
         })
     }

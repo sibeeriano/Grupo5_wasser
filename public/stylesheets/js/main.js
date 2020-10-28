@@ -267,7 +267,7 @@ var testimonial = $('.h1-testimonial-active');
 
 
 /* 10. WOW active */
-    new WOW().init();
+    
 
 // 11. ---- Mailchimp js --------//  
     function mailChimp() {

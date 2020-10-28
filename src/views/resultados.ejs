@@ -17,12 +17,12 @@
     <br>
     <div class="container">    
       <div class="row">
-        <% productos.forEach(producto => { %>            
+        <% products.forEach(producto => { %>            
           <div class="col-sm-3">
             <div class="panel panel-primary">
-              <div class="panel-heading"><%- products.nombre %>  </div>
-              <div class="panel-body"><a href="/productos/<%= product.category %>/<%= producto.id %>"><img src="/images/imagenProducto/<%=producto.image %> " class="img-responsive" style="width:100%" alt="Image"></a></div>
-              <div class="panel-footer">$<%- producto.price %> </div>
+              <div class="panel-heading"><%- producto.nombre %>  </div>
+              <div class="panel-body"><a href="/productos/detalle/<%= producto.id %>"><img src="/images/imagenProducto/<%=producto.image %> " class="img-responsive" style="width:100%" alt="Image"></a></div>
+              <div class="panel-footer">$<%- producto.precio %> </div>
               <div class="d-flex justify-content-center">
              
               </div>    

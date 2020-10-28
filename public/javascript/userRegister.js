@@ -15,7 +15,7 @@ el script esta en /views/partials/scripts como "  <script src="/javascript/userR
 
 */
 
-let formRegister = document.getElementById('formRegister') //todos los elementos capturados
+let formRegister = document.getElementById('loginForm2') //todos los elementos capturados
 let inputNombre = document.getElementById('nombre')
 let inputApellido = document.getElementById('apellido')
 let inputEmail = document.getElementById('email')

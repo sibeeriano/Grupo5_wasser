@@ -1,42 +1,68 @@
-window.onload = function(){
-    
-    let loginForm = document.getElementById('loginForm')
-    let inputEmail = document.getElementById('email')
-    let inputPass = document.getElementById('password')
-    //let inputRecordar = document.getElementById('exampleCheck1')
-    let divErrors = document.getElementById('errors')
-    let regexEmail =  /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/
-    
-    //console.log(inputRecordar) chequea la vinculación
-
-    function loginValidator(){
-        let errores = []
-        //el email tenga un formato tipo email (regex email validator en google)
-        if(regexEmail.test(inputEmail.value)){
-            errores.push('El email es incorrecto')
-        }
-        //que la contraseña tenga como minimo 6 y maximo 12 igual que en el back
-        //if(!inputPass.value.lenght < 6 || inputPass.value.lenght > 12){ //si el lenght de la pss es menor a 6 o mayor a 12 entra al error
-        //errores.push('La contraseña tiene que tener entre 6 y 12 caracteres')
-        //}
-
-        return errores //esta funcion devuelve los errores si los hay
-    }
- 
-    loginForm.submit = (e)=>{//con esto quer emos evitar que se de la accion por defecto que es que se envie el formulario de una, para evitar esto le damos un parametro llamado "e"
-        e.preventDefault() //con esto no se envia el formulario, no pasa nada
-        
-        divErrors.innerHTML ="" //con esto no se acumulan los errores en la vista!
-
-        let errores = loginValidator()  
-    
-        if (errores.lenght==0){  //si errores es igual a 0 
-            loginForm.submit() //se envia el formulario 
-        }else {//sino pio primero creo un div en el form para que se muestren los errores con la siguiente logica:
-            errores.forEach(error => {
-                divErrors.innerHTML += `<div class="alert alert-danger" role ="alert"> ${error}</div>`
-            })
-        }
-        
-    }
+let qs = function(elemento){
+    return document.querySelector(elemento)
 }
+
+window.addEventListener('load',function(){
+
+    let formulario = qs('form#loginForm');
+    let inputEmail = qs('#email');
+    let inputPass = qs('#password');
+    let errores = {};
+    let regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
+    let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
+
+    console.log(formulario.elements)
+    
+
+   
+    inputEmail.addEventListener('blur',function(){
+        switch (true) {
+            case this.value == "":
+                errores.email = "El campo email es obligatorio"
+                errorEmail.innerHTML = errores.email;
+                this.classList.add('is-invalid')
+            break;
+            default:
+            this.classList.remove('is-invalid');
+            this.classList.add('is-valid');
+            errorEmail.innerHTML = "";
+        }
+    })
+
+    inputPass.addEventListener('blur',function(){
+        switch (true) {
+            case this.value == "":
+                errores.pass = "El campo contraseña es obligatorio"
+                errorPass.innerHTML = errores.pass;
+                this.classList.add('is-invalid')
+            break;
+
+           
+            
+            default:
+          
+            errorPass.innerHTML = "";
+        }
+    })
+
+    formulario.addEventListener('submit',function(event){
+        let error = false
+        event.preventDefault()
+
+        let elementosForm = this.elements;
+        
+        for (let index = 0; index < elementosForm.length-1; index++) {
+            if(elementosForm[index].value == ""){
+                elementosForm[index].classList.add('is-invalid');
+                msgError.innerHTML = "Los campos señalados son obligatorios";
+                error =true
+            }
+        }
+        if(!error){
+            console.log("Todo Perfecto!!");
+            formulario.submit()
+        }
+        
+    })
+    
+})
