@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="no-js" lang="ES">
+<head>
+     <title>WASSER/Log in</title>
+     <%- include('./partials/head') %>     
+    </head>    
+    
+    <body>
+      <%- include('./partials/preloader') %>
+    
+    <header>
+      <%- include('./partials/header') %>
+    </header>
+
+    <body>
+        <div class="container">
+        
+            <h1>Iniciar sesion</h1>
+    
+           <form id="loginForm" action="" method="POST">
+                <div class="form-row">
+    
+                 <div class="form-row">
+    
+                    <div class="col-4">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" placeholder="email">
+                            <span id="errorEmail" class="text-danger"></span>
+                        </div>
+                    </div>
+    
+                    <div class="col-4">
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" placeholder="contraseña">
+                            <span id="errorPass" class="text-danger"></span>
+                        </div>
+                        <span></span>
+                    </div>
+    
+                   
+               
+                </div>
+         
+                   
+    
+                    
+    
+            
+    
+               <div class="form-row d-flex justify-content-between">
+                <span id="msgError" class="text-danger"></span>
+                    <button type="submit" >Enviar formulario</button>
+                    
+               </div>
+
+            </form>
+        </div>
+        
+       </main>
+
+    <!-- <footer>  -->
+    <%- include('./partials/footer') %>
+        
+    <!--       
+    </footer>   -->         
+      <%- include('./partials/scripts') %>  
+       <!-- <script src='/javascript/userLogin.js'></script>  -->
+    </body>
+    </html>
+      
+            

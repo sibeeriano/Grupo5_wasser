@@ -35,6 +35,12 @@ window.addEventListener('load',function(){
                 errores.pass = "El campo contraseña es obligatorio"
                 errorPass.innerHTML = errores.pass;
                 this.classList.add('is-invalid')
+            break
+
+            case this.value.trim().length <= 5:
+                errores.pass = "La contraseña tiene que tener mas de 4 Caracteres"
+                errorPass.innerHTML = errores.pass;
+                this.classList.add('is-invalid')
             break;
 
            
