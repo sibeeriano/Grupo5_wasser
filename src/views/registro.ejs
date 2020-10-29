@@ -1,103 +1,118 @@
 <!doctype html>
 <html class="no-js" lang="ES">
-<head>   
-    <title>WASSER/Sign in</title>
-    <%- include('./partials/head') %>     
-</head>    
+
+<head>
+  <title>WASSER/Sign in</title>
+  <%- include('./partials/head') %>
+</head>
 
 <body>
   <%- include('./partials/preloader') %>
 
-<header>
-  <%- include('./partials/header') %>
-</header>
+  <header>
+    <%- include('./partials/header') %>
+  </header>
 
-<main>
-  
-  <form id="form" action="/user/registrarse" method="POST" enctype="multipart/form-data">
-  <section class="form-register2">
-    <h4>Formulario de registro</h4>
-    <div id= "errors"></div> <!--Para mostrar los errores de validacion del front-->
-    <div>
-      <label for="nombre"></label>
-      <input type="text"
-      class="controlls2 <%= (typeof old != 'undefined' && old.nombre)?"is-valid":(typeof errors != 'undefined' && errors.nombre)?"is-invalid": ""  %>"
-      id="nombre"  name="nombre"  value="<%= (typeof old != 'undefined' && old.nombre)?old.nombre:'' %>" placeholder="Nombre"/>
-      <small class="text-danger"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %> </small>
-    </div>
-        
-    <div>
-      <label for="apellido"></label>
-      <input type="text"
-      class="controlls2 <%= (typeof old != 'undefined' && old.apellido)?"is-valid":(typeof errors != 'undefined' && errors.apellido)?"is-invalid": ""  %>"
-      id="apellido" value="<%= (typeof old != 'undefined' && old.apellido)?old.apellido:'' %>" placeholder="Apellido" name="apellido"/>
-      <small class="text-danger"><%= (typeof errors != 'undefined' && errors.apellido)?errors.apellido.msg: "" %> </small>
-    </div>
+  <main>
+    <article id="form-register1">
 
-    <div>
-      <label for="email"></label>
-      <input type="email"
-      class="controlls2 <%= (typeof old != 'undefined' && old.email && !errors.email)?"is-valid":(typeof errors != 'undefined' && errors.email)?"is-invalid": ""  %>"
-      id="email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" placeholder="Email" name="email"/>
-      <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
-    </div>
-   
-      
-    <div>
-      <label for="password"></label>
-      <input type="password"
-      class="controlls2 <%= (typeof errors != 'undefined' && errors.password)?"is-invalid": ""  %>"
-      id="password" placeholder="Contraseña" name="password"/>
-      <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
-    </div>
- 
-    <div>
-      <label for="password2"></label>
-      <input type="password"
-      class="controlls2 <%= (typeof errors != 'undefined' && errors.password2)?"is-invalid": ""  %>"
-      id="password2" placeholder="Reingresar contraseña" name="password2"/>
-      <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password2)?errors.password2.msg: "" %> </small>
-    
-      
-    <div class="form-group col-12 ">
-        <div class="custom-file mt-4">
-          <input class="controlls2"  type="file" id="customFileLang" lang="es" name="avatar">
-          <small class="text-danger"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %></small>
-        </div>
-      </div>
-    </div>
-    <br>
-    
+      <form id="registerForm" action="/user/registrarse" method="POST" enctype="multipart/form-data">
+        <section class="form-register2">
+          <h4>Formulario de registro</h4>
+          <div id="errors"></div>
+          <!--Para mostrar los errores de validacion del front-->
+          <div>
+            <label for="nombre"></label>
+            <input type="text"
+              class="controlls2 <%= (typeof old != 'undefined' && old.nombre)?"is-valid":(typeof errors != 'undefined' && errors.nombre)?"is-invalid": ""  %>"
+              id="nombre" name="nombre" value="<%= (typeof old != 'undefined' && old.nombre)?old.nombre:'' %>"
+              placeholder="Nombre" />
+            <small id="errorNombre" class="text-danger"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %>
+            </small>
+          </div>
+
+          <div>
+            <label for="apellido"></label>
+            <input type="text"
+              class="controlls2 <%= (typeof old != 'undefined' && old.apellido)?"is-valid":(typeof errors != 'undefined' && errors.apellido)?"is-invalid": ""  %>"
+              id="apellido" value="<%= (typeof old != 'undefined' && old.apellido)?old.apellido:'' %>"
+              placeholder="Apellido" name="apellido" />
+            <small id="errorApellido" class="text-danger"><%= (typeof errors != 'undefined' && errors.apellido)?errors.apellido.msg: "" %>
+            </small>
+          </div>
+
+          <div>
+            <label for="email"></label>
+            <input type="email"
+              class="controlls2 <%= (typeof old != 'undefined' && old.email && !errors.email)?"is-valid":(typeof errors != 'undefined' && errors.email)?"is-invalid": ""  %>"
+              id="email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" placeholder="Email"
+              name="email" />
+            <small id="errorEmail" class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %>
+            </small>
+          </div>
 
 
+          <div>
+            <label for="password"></label>
+            <input type="password"
+              class="controlls2 <%= (typeof errors != 'undefined' && errors.password)?"is-invalid": ""  %>"
+              id="password" placeholder="Contraseña" name="password" />
+            <small id="errorPass" class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %>
+            </small>
+          </div>
 
-    <div class="col-12 col-lg-12 mt-12">
-      <div class="controlls2">
-        <input type="checkbox" class="botons2 <%= (typeof old != 'undefined' && old.bases)?"is-valid":(typeof errors != 'undefined' && errors.bases)?"is-invalid": ""  %>" id="customCheck1" name="bases" required>
-        <label class="" for="customCheck1">Acepto las bases y condiciones</label>
-        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.bases)?errors.bases.msg: "" %> </small>
-      </div>
-    </div> 
-    
+          <div>
+            <label for="password2"></label>
+            <input type="password"
+              class="controlls2 <%= (typeof errors != 'undefined' && errors.password2)?"is-invalid": ""  %>"
+              id="password2" placeholder="Reingresar contraseña" name="password2" />
+            <small id="errorPass2"
+              class="text-danger"><%= (typeof errors != 'undefined' && errors.password2)?errors.password2.msg: "" %>
+            </small>
 
-      <div class="control">
-        <button href="/user/iniciarsesion" type="submit" class="botonregistrar">
-          Registrarse
-        </button>
-      </div>       
-        <p><a href="#">¿Ya tengo cuenta?</a></p>
-  </section>
-</form>
-</main>
 
-<footer>
+            <div class="form-group col-12 ">
+              <div class="custom-file mt-4">
+                <input class="controlls2" type="file" id="customFileLang" lang="es" name="avatar">
+                <small id="errorFoto" class="text-danger"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %></small>
+              </div>
+            </div>
+          </div>
+          <br>
+
+
+
+
+          <div class="col-12 col-lg-12 mt-12">
+            <div class="controlls2">
+              <input type="checkbox"
+                class="botons2 <%= (typeof old != 'undefined' && old.bases)?"is-valid":(typeof errors != 'undefined' && errors.bases)?"is-invalid": ""  %>"
+                id="customCheck1" name="bases" required>
+              <label class="" for="customCheck1">Acepto las bases y condiciones</label>
+              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.bases)?errors.bases.msg: "" %>
+              </small>
+            </div>
+          </div>
+
+
+          <div class="control">
+            <span id="msgError" class="text-danger"></span>
+            <button href="/user/iniciarsesion" type="submit" class="botonregistrar">
+              Registrarse
+            </button>
+          </div>
+          <p><a href="#">¿Ya tengo cuenta?</a></p>
+        </section>
+    </article>
+    </form>
+  </main>
+
+  <footer>
     <%- include('./partials/footer') %>
-</footer>           
-    <%- include('./partials/scripts') %>  
-    <script src="/javascript/userRegister.js"></script>
-   
+  </footer>
+  <%- include('./partials/scripts') %>
+  <script src="/javascript/userRegister.js"></script>
+
 </body>
+
 </html>
-  
-              
-         

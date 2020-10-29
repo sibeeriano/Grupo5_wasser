@@ -4,7 +4,7 @@ let qs = function(elemento){
 
 window.addEventListener('load',function(){
 
-    let formulario = qs('form');
+    let formulario = qs('form#registerForm');
     let inputNombre = qs('#nombre');
     let inputApellido = qs('#apellido');
     let inputEmail = qs('#email');
@@ -19,89 +19,77 @@ window.addEventListener('load',function(){
     let errores = {};
     let regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
     let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
-    let regExDNI = /^[0-9]{8}$/;
+    
 
-    inputNombre.addEventListener('blur',function(evento){
-        let inputElement = evento.currentTarget; // esto que agregue, es lo que "llama o declara" las variables de las errores, porque estaban declaradas, existen..pero faltaba llamarlas como en el caso de "imputNombre" por ejemplo
+    inputNombre.addEventListener('blur',function(){
         switch (true) {
             case this.value.length == 0:
                 errores.nombre = "El campo nombre es obligatorio";
-                inputElement.placeholder = errores.nombre; //les puse un placeholder asi cuando no se completa, salta el texto pidiendo completarlo, faltaria implementar un texto alerta...
-                inputElement.classList.add('is-invalid')
+                errorNombre.innerHTML = errores.nombre;
+            
                 break;
             case this.value.trim().length <= 2:
                 errores.nombre = "Tenés que poner al menos 3 letras"
-                inputElement.placeholder = errores.nombre;
-                inputElement.classList.add('is-invalid')
+                errorNombre.innerHTML = errores.nombre;
                 break;
             default:
-                inputElement.classList.remove('is-invalid');
-                inputElement.classList.add('is-valid');
-                inputElement.placeholder = "";
+                errorNombre.innerHTML = "";
         }
     })
 
-    inputApellido.addEventListener('blur',function(evento){
-        let inputElement = evento.currentTarget;
-
-
+    inputApellido.addEventListener('blur',function(){
         switch (true) {
             case this.value == "":
                 errors.apellido = "El campo apellido es obligatorio"
-                inputElement.placeholder = errors.apellido;
-                this.classList.add('is-invalid')
+                errorApellido.innerHTML = errors.apellido;
                 break
             case this.value.trim().length <= 2:
                 errors.apellido = "Tenés que poner al menos 3 letras"
-                inputElement.placeholder = errors.apellido;
-                inputElement.classList.add('is-invalid')
+                errorApellido.innerHTML = errors.apellido;
+                
             break;
             default:
-                inputElement.classList.remove('is-invalid');
-                inputElement.classList.add('is-valid');
-                inputElement.placeholder = "";
+           
+                errorApellido.innerHTML = "";
         }
     })
 
      
 
-    inputEmail.addEventListener('blur',function(e){
-        let inputElement = e.currentTarget;
+    inputEmail.addEventListener('blur',function(){
+        
         switch (true) {
             case this.value == "":
                 errores.email = "El campo email es obligatorio"
-                inputElement.placeholder = errores.email;
-                this.classList.add('is-invalid')
+                errorEmail.innerHTML = errores.email;
+           
             break
             case !regExEmail.test(this.value):
                 errores.email = "Debes escribir un email válido"
-                inputElement.placeholder = errores.email;
-                this.classList.add('is-invalid')
+                errorEmail.innerHTML = errores.email;
+          
             break;
             default:
-            this.classList.remove('is-invalid');
-            inputElement.add('is-valid');
-            inputElement.placeholder = "";
+     
+                errorEmail.innerHTML = "";
         }
     })
 
-    inputPass.addEventListener('blur',function(e){
-        let inputElement = e.currentTarget;
+    inputPass.addEventListener('blur',function(){
+  
         switch (true) {
             case this.value == "":
                 errores.pass = "El campo contraseña es obligatorio"
-                inputElement.placeholder = errores.pass;
-                this.classList.add('is-invalid')
+                errorPass.innerHTML = errores.pass;
+              
             break
             case !regExPass.test(this.value):
                 errores.pass = "La contraseña debe tener entre 6 y 12 caracteres y contener al menos un numero, una minúscula y una mayúscula"
                 errorPass.innerHTML = errores.pass;
-                this.classList.add('is-invalid')
+             
             break;
             default:
-                inputElement.remove('is-invalid');
-            inputElement.add('is-valid');
-            inputElement.placeholder = "";
+                errorPass.innerHTML = "";
         }
     })
 
@@ -110,16 +98,14 @@ window.addEventListener('load',function(){
             case this.value == "":
                 errores.pass2 = "La verificación de contraseña es obligatorio"
                 errorPass2.innerHTML = errores.pass2;
-                this.classList.add('is-invalid')
+               
             break
             case this.value != inputPass.value:
                 errores.pass2 = "Las contraseñas no coinciden"
                 errorPass2.innerHTML = errores.pass2;
-                this.classList.add('is-invalid')
+          
             break;
             default:
-            this.classList.remove('is-invalid');
-            this.classList.add('is-valid');
             errorPass2.innerHTML = "";
         }
     })
@@ -151,8 +137,7 @@ window.addEventListener('load',function(){
             reader.onload = function(){
               vistaPrevia.src = reader.result;
             };
-            this.classList.remove('is-invalid');
-            this.classList.add('is-valid');
+          
             errorFoto.innerHTML = "";
     })
 
@@ -166,7 +151,7 @@ window.addEventListener('load',function(){
         
         for (let index = 0; index < elementosForm.length-1; index++) {
             if(elementosForm[index].value == ""){
-                elementosForm[index].classList.add('is-invalid');
+            
                 msgError.innerHTML = "Los campos señadados son obligatorios";
                 error =true
             }
