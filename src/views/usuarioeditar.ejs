@@ -13,64 +13,89 @@
 </header>
 
 <main>
+
+
+ 
+
   
-  <form action="/user/updateProfile/<%= idUser %>" method="POST" enctype="multipart/form-data">
+  <form action="/user/updateProfile/<%= idUser %>" method="POST" enctype="multipart/form-data" id="userForm2" >
   <section class="form-register2">
     <h4>Actualizacion de Perfil</h4>
-        
+       
+     <!-- NOMBRE -->
+
     <div>
       <label for="nombre"></label>
       <input type="text"
       class="controlls2 <%= (typeof old != 'undefined' && old.nombre)?"is-valid":(typeof errors != 'undefined' && errors.nombre)?"is-invalid": ""  %>"
-      id="nombre"  name="nombre"  value="<%= (typeof old != 'undefined' && old.nombre)?old.nombre:'' %>" placeholder="Nombre"/>
-      <small class="text-danger"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %> </small>
+      id="nombre"  name="nombre"  value="<%= (typeof old != 'undefined' && old.nombre)?old.nombre:'' %>" placeholder= "Nuevo Nombre" />
+
+         <span id="errorNombre" class="text-danger"></span>
     </div>
         
+ <!-- APELLIDO -->
+
     <div>
       <label for="apellido"></label>
       <input type="text"
       class="controlls2 <%= (typeof old != 'undefined' && old.apellido)?"is-valid":(typeof errors != 'undefined' && errors.apellido)?"is-invalid": ""  %>"
-      id="apellido" value="<%= (typeof old != 'undefined' && old.apellido)?old.apellido:'' %>" placeholder="Apellido" name="apellido"/>
-      <small class="text-danger"><%= (typeof errors != 'undefined' && errors.apellido)?errors.apellido.msg: "" %> </small>
+      id="apellido" name="apellido" value="<%= (typeof old != 'undefined' && old.apellido)?old.apellido:'' %>" placeholder="Nuevo Apellido" />
+      
+      <span id="errorApellido" class="text-danger"></span>
     </div>
 
+ <!-- AVATAR -->
 
-      
+ 
+ <br>
+ 
+      <a></a>
     <div class="form-group col-12 ">
         <div class="custom-file mt-4">
-          <input class="controlls2"  type="file" id="customFileLang" lang="es" name="avatar">
+          <input class="controlls2"  type="file" id="customFileLang" lang="es" name="customFileLang">
           <small class="text-danger"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %></small>
+          <small class="text-danger"><%= (typeof errors != 'undefined' && errores.foto)?errores.foto.msg: "" %> </small>
+       
+          <span id="errorFoto" class="text-danger"></span>
+       
         </div>
       </div>
     </div>
     <br>
-    
-
-
-
-    <div class="col-12 col-lg-12 mt-12">
-      <div class="controlls2">
-        <input type="checkbox" class="botons2 <%= (typeof old != 'undefined' && old.bases)?"is-valid":(typeof errors != 'undefined' && errors.bases)?"is-invalid": ""  %>" id="customCheck1" name="bases" required>
-        <label class="" for="customCheck1">Acepto las bases y condiciones</label>
-        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.bases)?errors.bases.msg: "" %> </small>
+    <div class="custom-file mt-4">
+      <div class="col-12">
+          <div class="d-flex justify-content-center">
+              <img src="" id="vistaPrevia" class="img-thumbnail">
+          </div>
       </div>
-    </div> 
+      </div>
+
+ <!-- BASES Y CONDICIONES -->
+
+     
     
 
-      <div class="control">
-        <button href="/user/iniciarsesion" type="submit" class="botonregistrar">
+      <div class="">
+        <button href="user/perfil/<%= user.id %>" type="submit" class="">
           Actualizar
         </button>
+      <span id="msgError" class="text-danger"></span>
       </div>       
         <p><a href="/">cancelar</a></p>
   </section>
 </form>
+
+<br>
+
+<br>
+
 </main>
 
 <footer>
     <%- include('./partials/footer') %>
 </footer>           
     <%- include('./partials/scripts') %>  
+    <script src="/javascript/userEdit.js"></script>
 </body>
 </html>
   

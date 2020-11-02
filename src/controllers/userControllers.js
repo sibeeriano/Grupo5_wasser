@@ -125,6 +125,10 @@ module.exports = {
                     idUser: idUser,
                     dbUser: resultado,
                     user: req.session.user,
+                    avatar: resultado.avatar,
+                    nombre: resultado.nombre,     
+                    apellido: resultado.apellido, 
+                    email:resultado.email,
                     
                 })
             })
