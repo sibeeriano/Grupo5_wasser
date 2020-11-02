@@ -17,13 +17,15 @@
         <h4>Editar producto (Admin)</h4>
         <% dbProducts.forEach(products => { %>
             <% if (products.id == idProducto) { %>
-          <form method="POST" action="/productos/EditarProducto/<%= products.id %>?_method=PUT" enctype="multipart/form-data">
+          <form method="POST" id="formEditProduct" action="/productos/EditarProducto/<%= products.id %>?_method=PUT" enctype="multipart/form-data">
           
-        <input class="controlls2" type="" name="nombre"  placeholder="Nombre producto" value="<%= products.nombre %> " required>
+        <input class="controlls2" type="" name="nombre" id="nombre" placeholder="Nombre producto" value="<%= products.nombre %> " >
+        <span id="errorNombre" class="text-danger"></span>
+        
+        <input class="controlls2" type="" id="precio" name="precio" placeholder="Precio" value="<%= products.precio %> " >      
+        <span id="errorPrecio" class="text-danger"></span>
 
-        
-        <input class="controlls2" type="" name="precio" placeholder="Precio" value="<%= products.precio %> " required>      
-        
+
         <label for="Categorias"></label>
             <select name="id_category" class="controlls2">
                 <% if (products.id_categoria == "baño") { %>                
@@ -47,17 +49,27 @@
                 <option value="accesorios">Accesorios Varios/option>
             </select>
         <h3>Agregue 1 imagen</h3>
-        <input class="controlls2"  type="file" name="imagenes" value="<%= products.imagenes %> ">
-
+        <input class="controlls2"  type="file" id="imagenes" name="imagenes" value="<%= products.imagenes %> ">
+        <span id="errorFoto" class="text-danger"></span>
       </label>
+      <div class="custom-file mt-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-center">
+                <img src="" id="vistaPrevia" class="img-thumbnail">
+            </div>
+        </div>
+        </div>
+
         <label for="controlls2"></label>    
         <div class="botons">
           <label for="exampleFormControlTextarea1">Descripción</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"><%= products.descripcion %></textarea>
+          <textarea class="form-control" id="descripcion" rows="3" name="description"><%= products.descripcion %></textarea>
+          <span id="errorComentario" class="text-danger"></span>
       </div>
                    
       <div class="mt-5 mr-5 d-flex justify-content-center">
         <button type="submit" class="btn btn-outline-primary">Guardar</button></div>
+        <span id="msgError" class="text-danger"></span>
         <p class="pull-left copyright backgroun"> <a href="/productos">Cancelar</a></li></p>
        
     </form>
@@ -70,7 +82,7 @@
 <footer>
     <%- include('./partials/footer') %>
   </footer>           
-  
+  <script src="/javascript/editProduct.js"></script>
     <%- include('./partials/scripts') %>  
   
   </body>
