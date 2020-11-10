@@ -152,14 +152,14 @@ module.exports = {
         db.Products.findAll({
             where:{
                 nombre:{
-                    [Op.substring]:req.query.buscar
+                    [Op.substring]:req.body.buscar
                 }
             }
         })
-        .then(resultado=>{
+        .then(resultados=>{
             res.render('resultados', {
                 title: "Resultados de la busqueda",
-                products: resultado,
+                products: resultados,
                 user: req.session.user
                 
             })

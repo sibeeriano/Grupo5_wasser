@@ -39,13 +39,10 @@
                                                         <li>Hola <%= (user)?user.nick:"." %></li>   
                                                         <li><a href="user/perfil/<%= user.id %>">Mi Perfil</a></li> 
                                                         <li><a href="/user/cerrarsesion">Cerrar Sesion</a></li> 
-                                                          
-                                                              
-
+                        
                                                         <% } %>
                                                     </ul>
                                                 </li>
-                                               
                                                
                                                 <li><a href="/categoria">Categorias</a>
                                                     <ul class="submenu">
@@ -84,23 +81,21 @@
                                                     </li>
                                                     <!-- Search Box -->                            
                                                     <li class="search-switch">
-                                                       <a>      
-                                                        <form action="/productos/search" method="get" class="search-form">
-                                                            <input type="text" name="search" placeholder="Ingresa busqueda" class="search-form_input">
+                                                            
+                                                        <form action="/productos/search" method="POST" class="search-form">  <!-- estaba mal hecho el querystring por get, asi que lo pasamos a POST-->
+                                                            <input type="search" name="buscar" placeholder="Ingresa busqueda" class="search-form_input">
                                                             <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
                                                         </form>
-                                                    </a></li>
-                                               <li><li><% if (typeof user == "undefined") { %>
+                                                    </li>
+                                               <li>
+                                                   <li><% if (typeof user == "undefined") { %>
                                                 <li><a href="/user/iniciarsesion">Bienvenido!</a></li>
                                                
                                                 <% }else{ %>
                                                 <li></li><a href="user/perfil/<%= user.id %>">Hola <%= (user)?user.nick:"!" %>   <img src="/images/avatares/<%= user.avatar %>" class="img-responsive" style="width:5%" alt="Image"> </a></li>   
                                                 
-                                                 
-                                                  
-                                                      
-
-                                                <% } %></li>  </li>
+                                                <% } %></li>  
+                                                       </li>
                                                    </li> 
                                                    
                                                 

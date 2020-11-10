@@ -14,7 +14,7 @@ const multerProduct = require('../middlewares/multerProduct')
 router.get('/',controller.listarAdmin);
 router.get('/todos',controller.listarTodos);
 
-router.get('/search',controller.search);
+router.post('/search',controller.search);
 
 router.get('/agregar',controller.publicarpost)
 router.post('/agregar',multerProduct.any(),RecordarUser,controller.publicar);
