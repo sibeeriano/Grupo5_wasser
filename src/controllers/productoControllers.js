@@ -146,7 +146,12 @@ module.exports = {
     })
     res.redirect('/productos')
 },
-  
+carrito: function (req, res, next) {//controlador vista
+    res.render("carrito",{
+        user:req.session.user
+    })
+},
+
     search: function (req, res) {
               
         db.Products.findAll({

@@ -25,6 +25,8 @@ router.put('/EditarProducto/:id', multerProduct.any(), RecordarUser,controller.g
 router.get('/detalle/:id',controller.producto);
 //router.get('/:cat?',controller.categorias);
 
+router.get('/carrito', controller.carrito);
+
 
 
 router.delete('/delete/:id',RecordarUser, controller.delete)
