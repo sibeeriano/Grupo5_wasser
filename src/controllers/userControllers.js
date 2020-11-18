@@ -180,11 +180,7 @@ module.exports = {
     },
     delete: function(req,res){
        
-        //cerrar la session y borrar cookie
-        req.session.destroy();
-        if(req.cookies.userWasser){
-            res.cookie('userWasser','',{maxAge:-1});
-        }
+      
         //borrar el registro de la base de datos
         db.User.destroy({
             where:{
