@@ -1,10 +1,37 @@
-<footer>
+<footer><br>
 
- 
+
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"></div>
+  <ul class="nav navbar-nav">
+    <li class="dropdown">
+         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+           <img src="/images/flags/AR.png"/>
+           Español 
+           <b class="caret"></b>
+         </a>
+         <ul class="dropdown-menu">
+          <li><a><img src=""/> <span class="label"></span></a></li>
+                  <li><a><img src="/images/flags/US.png"/> English <span class="label">(coming soon)</span></a></li>
+                  <li><a><img src=""/> <span class="label"></span></a></li>
+         </ul>
+   </li>
+
+ </ul>
   
 
       <div class="container">
-          <p class="pull-left copyright"> Copyright © WASSER 2020. Todos los derechos reservados.<a href="/sobreNosotros"> Sobre Nosotros </a></li></p>
+<br>
+          <li><a href="https://www.instagram.com/wasser.arg/"><i class="fab fa-instagram"></i> WASSER.ARG </a>
+              <ul class="submenu"><br>
+                <a href="/sobreNosotros"> Sobre Nosotros </a>
+                <br>
+                  
+                  
+              </ul>
+          </li>
+         
+
+          
      
       </div>
      
@@ -15,9 +42,13 @@
           <li><a href="/user/iniciarsesion">Ingresar</a></li>
           <% }else{ %>
           <li>Regresa pronto <%= (user)?user.nick:"." %>!</li>   
+
           
           <li><a href="/user/cerrarsesion">Cerrar Sesion</a></li> </li></p>
-          <% } %>
+          <% } %><br>
+
+          <p class="pull-left copyright"> Copyright © WASSER 2020. Todos los derechos reservados.   <li><a href="instagram.com/wasserar"></a> </li>
+          </p>
           <br>
     </div>
   <!--/.footer-bottom--> 
