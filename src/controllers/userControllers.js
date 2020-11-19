@@ -130,6 +130,7 @@ module.exports = {
                     apellido: resultado.apellido, 
                     email:resultado.email,
                     
+                    
                 })
             })
             .catch(error => {

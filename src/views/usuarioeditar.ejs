@@ -28,7 +28,7 @@
       <label for="nombre"></label>
       <input type="text"
       class="controlls2 <%= (typeof old != 'undefined' && old.nombre)?"is-valid":(typeof errors != 'undefined' && errors.nombre)?"is-invalid": ""  %>"
-      id="nombre"  name="nombre"  value="<%= (typeof old != 'undefined' && old.nombre)?old.nombre:'' %>" placeholder= "Nuevo Nombre" />
+      id="nombre"  name="nombre"  value="<%= nombre %>" placeholder= "Nuevo Nombre" />
 
          <span id="errorNombre" class="text-danger"></span>
     </div>
@@ -39,7 +39,7 @@
       <label for="apellido"></label>
       <input type="text"
       class="controlls2 <%= (typeof old != 'undefined' && old.apellido)?"is-valid":(typeof errors != 'undefined' && errors.apellido)?"is-invalid": ""  %>"
-      id="apellido" name="apellido" value="<%= (typeof old != 'undefined' && old.apellido)?old.apellido:'' %>" placeholder="Nuevo Apellido" />
+      id="apellido" name="apellido" value=" <%= apellido %>" placeholder="ingrese un apellido" />
       
       <span id="errorApellido" class="text-danger"></span>
     </div>
@@ -48,11 +48,13 @@
 
  
  <br>
- 
-      <a></a>
+ <h1>Foto de perfil actual</h1>
+<h1><img src="/images/avatares/<%= avatar %>" class="img-responsive" style="width:25%" alt="Image"> </h1> 
+      
     <div class="form-group col-12 ">
+      
         <div class="custom-file mt-4">
-          <input class="controlls2"  type="file" id="customFileLang" lang="es" name="customFileLang">
+          <input class="controlls2"  type="file" id="customFileLang" lang="es" name="customFileLang" >
           <small class="text-danger"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %></small>
           <small class="text-danger"><%= (typeof errors != 'undefined' && errores.foto)?errores.foto.msg: "" %> </small>
        
@@ -65,7 +67,7 @@
     <div class="custom-file mt-4">
       <div class="col-12">
           <div class="d-flex justify-content-center">
-              <img src="" id="vistaPrevia" class="img-thumbnail">
+              <img src="" id="vistaPrevia" class="img-thumbnail" >
           </div>
       </div>
       </div>
