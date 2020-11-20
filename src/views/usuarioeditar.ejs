@@ -54,7 +54,9 @@
     <div class="form-group col-12 ">
       
         <div class="custom-file mt-4">
-          <input class="controlls2"  type="file" id="customFileLang" lang="es" name="customFileLang" >
+          <input class="controlls2"  
+          
+          style= "overflow: hidden" type="file" id="customFileLang" lang="es" name="customFileLang" >
           <small class="text-danger"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %></small>
           <small class="text-danger"><%= (typeof errors != 'undefined' && errores.foto)?errores.foto.msg: "" %> </small>
        
