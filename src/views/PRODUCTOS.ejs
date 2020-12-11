@@ -34,9 +34,53 @@
               <button class="">Editar</button> 
               </form>
               <br>
-              <form onclick="return confirm('Estas seguro que querés eliminaro el producto?')" action="/productos/delete/<%= producto.id %>?_method=delete" method="POST">
+              <!-- <form alert="return confirm('Estas seguro que querés eliminaro el producto?')" action="/productos/delete/<%= producto.id %>?_method=delete" method="POST">
               <button class="">Eliminar</button>
-              </form>
+              </form> !-->
+
+              
+              <button onclick="eliminar()">Eliminar </button> 
+
+              <script type = "text/javascript">
+              
+              function eliminar(){
+
+                swal('El item se eliminará!', {
+
+                  buttons: {
+                    
+
+                    confirmar: {
+                      text: "Estoy seguro!",
+                      value: "confirmar",
+                      
+                    },
+                    cancel: "Bueno, no tanto",
+                  },
+                    })
+                    .then((value) =>{
+                      switch(value) {
+                      case "confirmar":
+                      
+                      //MIRA LEAN ACA TENDRIA QUE IR LA LOGICA QUE HACE QUE EL PRODUCTO SE BORRE! NO ME SALE 
+            
+        
+
+                         break;
+
+                        default:
+                        swal("Ningun item ha sido eliminado!");
+                       
+                      }
+
+                    }) 
+
+              }
+              
+              
+              </script>
+            
+     
               </div>    
               <div class="panel-footer">
                 <br>
@@ -63,13 +107,4 @@
                 
             
                 
-            
-              
-              
-    
-    
-            
- 
-
-      
-     
+        
