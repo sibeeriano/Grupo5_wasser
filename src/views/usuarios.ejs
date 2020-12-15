@@ -49,9 +49,43 @@
                 <td><form action="perfil/<%= usuario.id %>">
                     <button class="">Perfil</button>
                     </form></td>    
-                    <td><form onclick="return confirm('Estas seguro que querés eliminaro el usuario?')" action="/user/delete/<%= usuario.id %>?_method=delete" method="POST">
-                        <button class="">Eliminar</button>
-                        </form></td>    
+                    <td>   
+
+                        <form id= myForm action="/user/delete/<%= usuario.id %>?_method=delete" method="POST">
+
+                            <script>
+                            
+                            function validateForm() {
+                    event.preventDefault(); // prevent form submit
+                    var form = document.forms["myForm"]; // storing the form
+                    swal({
+                           title: "Estas seguro????",
+                           text: "Si elimina el usuario no hay vuelta atrás!",
+                           icon: "warning",
+                           buttons: true,
+                           dangerMode: true,
+                         })
+                        .then((willDelete) => {
+                             if (willDelete) {
+                                   form.submit();
+                             } else {
+                                    swal("No se eliminó ningun usuario!");
+                         }
+                      });
+              }
+              
+                            </script>
+              
+              
+                         
+              
+                              <button class="" type="submit" name="delete" onclick="validateForm()">
+                                  <i class="fa fa-trash"></i>
+                                     
+                              </button>
+                      </form>
+
+
             </tr>
             <% }) %>
         </tbody>

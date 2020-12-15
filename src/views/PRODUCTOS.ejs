@@ -31,51 +31,50 @@
               <div class="panel-footer">$<%- producto.precio %> </div>
               <div class="d-flex justify-content-center">
               <form action="/productos/EditarProducto/<%= producto.id %>"  method="">
-              <button class="">Editar</button> 
+              <button class="">
+              <i class="fas fa-edit"></i>
+              Editar</button> 
               </form>
               <br>
               <!-- <form alert="return confirm('Estas seguro que querés eliminaro el producto?')" action="/productos/delete/<%= producto.id %>?_method=delete" method="POST">
               <button class="">Eliminar</button>
               </form> !-->
 
+              <form id= myForm action="/productos/delete/<%= producto.id %>?_method=delete" method="POST">
+
+              <script>
               
-              <button onclick="eliminar()">Eliminar </button> 
+              function validateForm() {
+      event.preventDefault(); // prevent form submit
+      var form = document.forms["myForm"]; // storing the form
+      swal({
+             title: "Estas seguro????",
+             text: "Si elimina el archivo no hay vuelta atrás!",
+             icon: "warning",
+             buttons: true,
+             dangerMode: true,
+           })
+          .then((willDelete) => {
+               if (willDelete) {
+                     form.submit();
+               } else {
+                      swal("No se eliminó ningun archivo!");
+           }
+        });
+}
 
-              <script type = "text/javascript">
-              
-              function eliminar(){
+              </script>
 
-                swal('El item se eliminará!', {
 
-                  buttons: {
-                    
+           
 
-                    confirmar: {
-                      text: "Estoy seguro!",
-                      value: "confirmar",
-                      
-                    },
-                    cancel: "Bueno, no tanto",
-                  },
-                    })
-                    .then((value) =>{
-                      switch(value) {
-                      case "confirmar":
-                      
-                      //MIRA LEAN ACA TENDRIA QUE IR LA LOGICA QUE HACE QUE EL PRODUCTO SE BORRE! NO ME SALE 
-            
-        
+                <button class="" type="submit" name="delete" onclick="validateForm()">
+                    <i class="fa fa-trash"></i>
+                        Eliminar
+                </button>
+        </form>
 
-                         break;
-
-                        default:
-                        swal("Ningun item ha sido eliminado!");
-                       
-                      }
-
-                    }) 
-
-              }
+          
               
               
               </script>
@@ -99,6 +98,7 @@
         <%- include('./partials/footer') %>
   </footer>           
         <%- include('./partials/scripts') %>  
+        <script src="/javascript/sweetAlert.js"></script>
   </body>
   </html>    
   
