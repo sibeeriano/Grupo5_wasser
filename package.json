@@ -2,6 +2,10 @@
   "name": "wasser",
   "version": "0.0.0",
   "private": true,
+   "engines": {
+    "node": "12.18.1",
+    "npm": "6.14.5"
+   },
   "Encargado de Express": "Facundo Vara, Leandro Uriel Turrion, Leandro Bucco",
   "scripts": {
     "start": "node ./src/bin/www"
